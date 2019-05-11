@@ -11,7 +11,7 @@ Mọi đóng góp dù lớn hay nhỏ cũng đều được hoan nghênh.
 
 Để tham gia đóng góp bản dịch cho các mẫu thiết kế, các bạn chỉ cần làm theo các bước sau:
 
-* Đăng ký chương mà bán muốn dịch [tại đây](https://github.com/minhhungit/designpatternsincsharptiengviet/issues/1) nhằm tránh trùng lặp \(nhiều người cùng dịch\)
+* Đăng ký chương mà bạn muốn dịch [tại đây](https://github.com/minhhungit/designpatternsincsharptiengviet/issues/1) nhằm tránh trùng lặp \(nhiều người cùng dịch\)
 * Fork repo này
 * Update  file .md create và pull request để merge
 
