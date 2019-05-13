@@ -22,7 +22,7 @@ Trong ví dụ minh họa này, tôi sẽ làm theo structure \(cấu trúc, ki�
 
 ![H&#xEC;nh 2-1. V&#xED; d&#x1EE5; Prototype](../../.gitbook/assets/image%20%283%29.png)
 
-Ở đây, _BasicCar_ là một prototype, Nano và Ford là concrete prototypes \(những khuôn mẫu cụ thể\), và chúng đã được implement phương thức _Clone\(\)_ - là phương thức đã được định nghĩa trong _BasicCar._ Hãy chú ý rằng trong ví dụ này tôi đã tạo một object BasicCar với một vài price \(giá tiền\) mặt định. Sau đó tôi chỉnh sửa price cho mỗi model. `Program.cs` là thứ được dùng để chạy chương trình chắc ai cũng biết rồi.
+Ở đây, _`BasicCar`_là một prototype, _`Nano`_ và _`Ford`_ là concrete prototypes \(những khuôn mẫu cụ thể\), và chúng đã được implement phương thức _`Clone()`_- là phương thức đã được định nghĩa trong _`BasicCar.`_ Hãy chú ý rằng trong ví dụ này tôi đã tạo một object _`BasicCar`_ với một vài price \(giá tiền\) mặt định. Sau đó tôi chỉnh sửa price cho mỗi model. _`Program.cs`_ là thứ được dùng để chạy chương trình chắc ai cũng biết rồi.
 
 ### Class Diagram
 
@@ -135,7 +135,7 @@ Car is: Ford Yellow, and it's price is Rs. 886026
 ```
 
 {% hint style="info" %}
-Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của bạn bởi vì chỗ này tôi generate một price  ngẫu nhiên trong phương thức _SetPrice\(\)_ bên trong _BasicCar_ class. Nhưng tôi đã đảm bảo rằng price của _Ford_ sẽ lớn hơn _Nano._
+Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của bạn bởi vì chỗ này tôi generate một price  ngẫu nhiên trong phương thức _`SetPrice()`_ bên trong _`BasicCar`_ class. Nhưng tôi đã đảm bảo rằng price của _`Ford`_ sẽ lớn hơn _`Nano`._
 {% endhint %}
 
 ## Q&A Session

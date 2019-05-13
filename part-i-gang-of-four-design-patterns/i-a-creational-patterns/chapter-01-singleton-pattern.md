@@ -2,7 +2,7 @@
 
 ## GoF Definition
 
-Đảm bảo rằng một class \(lớp\) chỉ có **duy nhất** một instance \(thể hiện\), và cung cấp một nơi chung nhất, toàn cục để truy cập vào lớp đó.
+Đảm bảo rằng một _`class`_ \(lớp\) chỉ có **duy nhất** một _`instance`_ \(thể hiện\), và cung cấp một nơi chung nhất, toàn cục để truy cập vào lớp đó.
 
 ## Khái niệm
 
@@ -28,7 +28,7 @@ Bạn có một chương trình, ví dụ notepad, bạn muốn người dùng c
 
 Có một số đặc điểm chính khi triển khai code dưới đây:
 
-* Constructor là private trong ví dụ này, do đó bạn sẽ không thể khởi tạo instance  như cách thông thường \(bằng từ khóa new\)
+* Constructor là _`private`_ trong ví dụ này, do đó bạn sẽ không thể khởi tạo instance  như cách thông thường \(bằng từ khóa_`new`_\)
 * Trước khi bạn thử tạo một instance của class, bạn sẽ kiểm tra xem liệu đã có sẵn instance nào chưa. Nếu bạn chưa có instance nào, bạn sẽ tạo mới một instance, còn không thì sử dụng cái đã có sẵn.
 
 ### Class Diagram 
@@ -45,16 +45,16 @@ Hình 1.2 trình bày high-level structure \(cấu trúc bậc cao / cấu trúc
 
 ### Thảo luận
 
-Ví dụ đơn giản này sẽ minh họa về khái niệm của mẫu Singleton. Phương pháp tiếp cận này gọi là _static initialization_ \(khởi tạo tĩnh\)
+Ví dụ đơn giản này sẽ minh họa về khái niệm của mẫu Singleton. Phương pháp tiếp cận này gọi là _`static initialization`_ \(khởi tạo tĩnh\)
 
 Ban đầu, đặc tả mẫu Singleton trong ngôn ngữ C++ có một chút không rõ ràng về thứ tự khởi tạo của những biến static \(nhớ là nguồn gốc của C\# có sự liên kết khá chặt chẽ với ngôn ngữ C và C++\). Nhưng .NET framework đã giải quyết được những vấn đề này.
 
 Sau đây là những điểm đáng chú của phương pháp này:
 
-* Common Language Runtime \(CLR\) sẽ phụ trách quá trình khởi tạo biến.
+* _`Common Language Runtime (CLR)`_ sẽ phụ trách quá trình khởi tạo biến.
 * Bạn tạo một instance khi bất kỳ thành viên của class được tham chiếu tới.
-* _public static_ member sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng _the instantiation process_ \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính _**Instance**_ ****của class \(nói cách khác, nó hỗ trợ khả năng _lazy instantiation_\). Từ khóa _**sealed**_ ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa _**readonly**_ đảm bảo rằng quá trình khởi tạo biến `instance` diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
-* Constructor là _**private**_. Do đó bạn không thể khởi tạo class Singleton bên trong hàm Main\(\). Điều này sẽ giúp bạn trỏ đến một instance có thể đã tồn tại sẵn trong hệ thống.
+* _**`public static member`**_ sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng _`instantiation process`_ \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính `Instance` ****của class \(nói cách khác, nó hỗ trợ khả năng _`lazy instantiation`_\). Từ khóa _**`sealed`**_ ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa _**`readonly`**_ đảm bảo rằng quá trình khởi tạo biến `instance` diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
+* Constructor là _**`private`**_. Do đó bạn không thể khởi tạo class Singleton bên trong hàm _**`Main()`**_. Điều này sẽ giúp bạn trỏ đến một instance có thể đã tồn tại sẵn trong hệ thống.
 
 ### Viết Code
 
@@ -155,7 +155,7 @@ Number of instances =1
 ***Singleton Pattern Demo***
 ```
 
-Điều này cho bạn thấy nhược điểm của phương pháp này. Cụ thể, bên trong hàm _Main\(\)_, bạn đã cố sử dụng biến static _**MyInt**_ nhưng chương trình của bạn vẫn tạo ra một instance của class Singleton. Nói cách khác, với cách tiếp cận này you have less control over the instantiation process, which starts whenever you refer to any static member of the class.
+Điều này cho bạn thấy nhược điểm của phương pháp này. Cụ thể, bên trong hàm _**`Main()`**_, bạn đã cố sử dụng biến static _**`MyInt`**_ nhưng chương trình của bạn vẫn tạo ra một instance của class Singleton. Nói cách khác, với cách tiếp cận này you have less control over the instantiation process, which starts whenever you refer to any static member of the class.
 
 Tùy nhiên, trong hầu hết trường hợp thì bạn không cần quan tâm đến hạn chế này, bạn có thể dễ dãi cho qua vì nó là một _one-time activity_ \(chạy một lần\) và quy trình này sẽ không bị lặp lại, do đó phương pháp này vẫn được sử dụng phổ biến trong các ứng dụng .NET
 
