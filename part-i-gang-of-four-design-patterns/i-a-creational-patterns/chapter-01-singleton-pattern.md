@@ -232,10 +232,12 @@ Tùy nhiên, trong hầu hết trường hợp thì bạn không cần quan tâm
    Trước tiên hãy xem C\# đặc tả từ khóa _volatile ****_:
 
    ```text
-   The volatile keyword indicates that a field might be modified by
-   multiple threads that are executing at the same time. Fields that
-   are declared volatile are not subject to compiler optimizations that
-   assume access by a single thread. This ensures that the most up-todate value is present in the field at all times
+   The volatile keyword indicates that a field might be modified by 
+   multiple threads that are executing at the same time. 
+   Fields that are declared volatile are not subject to 
+   compiler optimizations that assume access by a single thread. 
+   This ensures that the most up-todate value is present in 
+   the field at all times
    ```
 
    Nói một cách đơn giản, từ khóa _volatile_ giúp bạn thực hiện một _serialize access mechanism_ \(cơ chế truy cập nối tiếp\). Nói cách khác, tất cả các thread sẽ theo dõi các thay đổi của bất kỳ thread nào khác theo thứ tự thực hiện của chúng. Nhớ rằng, từ khóa _volatile_ được áp dụng cho các field của class \(hoặc struct\). Bạn không thể xài nó cho local variables \(các biến cục bộ\).  
