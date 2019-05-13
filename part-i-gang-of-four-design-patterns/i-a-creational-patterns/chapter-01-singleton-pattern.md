@@ -161,6 +161,90 @@ Tùy nhiên, trong hầu hết trường hợp thì bạn không cần quan tâm
 
 ## Phần hỏi đáp
 
+1. **Sao phải phức tạp hóa vấn đề lên thế? Ta có thể viết class Singleton đơn giản như dưới đây mà:**
+
+   ```csharp
+   public class Singleton
+   {
+       private static Singleton instance;
+       private Singleton() { }
+       public static Singleton Instance
+       {
+           get
+           {
+               if (instance == null)
+               {
+                   instance = new Singleton();
+               }
+               return instance;
+           }
+       }
+   }
+   ```
+
+   Cách viết này có thể chạy tốt với môi trường single-thread \(đơn luồng\). Nhưng trong môi trường multi-thread \(đa luồng\), giả sử rằng có 2 \(hoặc nhiều\) thread cùng thời điểm đang cố kiểm tra dòng code này:  
+
+
+   `if (instance == null)`
+
+  
+   Ở đây, nếu chúng thấy rằng instance vẫn chưa tồn tại thì chúng đều sẽ tạo ra một instance, kết quả là, class của bạn có thể có nhiều instance được tạo ra.  
+
+2. **Có cách viết nào khác để tạo mẫu Singleton không ?**
+
+   Có nhiều cách, cách nào cũng có điểm mạnh và điểm yếu. Tôi sẽ thảo luận một cách gọi là _double checked locking_. Tài liệu MSDN mô tả cách viết này như sau:
+
+   ```csharp
+   //Double checked locking
+   using System;
+   public sealed class Singleton
+   {
+       //We are using volatile to ensure that
+       //assignment to the instance variable finishes before it’s
+       //access.
+       private static volatile Singleton instance;
+       private static object lockObject = new Object();
+       private Singleton() { }
+       public static Singleton Instance
+       {
+           get
+           {
+               if (instance == null)
+               {
+                   lock (lockObject)
+                   {
+                       if (instance == null)
+                           instance = new Singleton();
+                   }
+               }
+               return instance;
+           }
+       }
+   }
+   ```
+
+   Cách viết này có thể giúp bạn tạo instance khi chúng thật sự cần. Nhưng bạn phải nhớ rằng, chi phí của cơ chế `lock` thường đắt đỏ.
+
+   Nếu bạn vẫn muốn tìm hiểu thêm về các cách tạo ra Singleton, bạn có thể tham khảo bài viết này [http://csharpindepth.com/Articles/General/Singleton.aspx](http://csharpindepth.com/Articles/General/Singleton.aspx),  nó sẽ thảo luận về những lựa chọn \(cả ưu và nhược điểm\).  
+
+3. **Trong ví dụ double checked locking, sao bạn đánh dấu instance là volatile:** 
+
+   Trước tiên hãy xem C\# đặc tả từ khóa _volatile ****_:
+
+   ```text
+   The volatile keyword indicates that a field might be modified by
+   multiple threads that are executing at the same time. Fields that
+   are declared volatile are not subject to compiler optimizations that
+   assume access by a single thread. This ensures that the most up-todate value is present in the field at all times
+   ```
+
+   Nói một cách đơn giản, từ khóa _volatile_ giúp bạn thực hiện một _serialize access mechanism_ \(cơ chế truy cập nối tiếp\). Nói cách khác, tất cả các thread sẽ theo dõi các thay đổi của bất kỳ thread nào khác theo thứ tự thực hiện của chúng. Nhớ rằng, từ khóa _volatile_ được áp dụng cho các field của class \(hoặc struct\). Bạn không thể xài nó cho local variables \(các biến cục bộ\).  
+
+4. **Why are multiple object creations a big concern**
+   * Object creations in the real world are treated as costly operations.
+   * Sometimes you may need to implement a centralized system for easy maintenance. This also helps you to provide a global access mechanism. 
+5. **Why are you using the keyword “sealed”? The singleton class has a private constructor that can stop the derivation process. Is the understanding correct?** Good catch. It was not mandatory but it is always better to show your intention clearly. I have used it to guard one special case-if you are tempted to use a derived nested class as below:
+
 > still translating...
 
 ## Tham khảo thêm
@@ -169,4 +253,6 @@ Rất có thể nội dung trong chương này - quyển sách này chưa đủ 
 
 * [http://nthoai.blogspot.com/2008/05/su-dung-singleton-trong-csharp.html](http://nthoai.blogspot.com/2008/05/su-dung-singleton-trong-csharp.html)
 * [https://viblo.asia/p/hoc-singleton-pattern-trong-5-phut-4P856goOKY3](https://viblo.asia/p/hoc-singleton-pattern-trong-5-phut-4P856goOKY3)
+
+
 
