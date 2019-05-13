@@ -240,12 +240,50 @@ Tùy nhiên, trong hầu hết trường hợp thì bạn không cần quan tâm
 
    Nói một cách đơn giản, từ khóa _volatile_ giúp bạn thực hiện một _serialize access mechanism_ \(cơ chế truy cập nối tiếp\). Nói cách khác, tất cả các thread sẽ theo dõi các thay đổi của bất kỳ thread nào khác theo thứ tự thực hiện của chúng. Nhớ rằng, từ khóa _volatile_ được áp dụng cho các field của class \(hoặc struct\). Bạn không thể xài nó cho local variables \(các biến cục bộ\).  
 
-4. **Why are multiple object creations a big concern**
-   * Object creations in the real world are treated as costly operations.
-   * Sometimes you may need to implement a centralized system for easy maintenance. This also helps you to provide a global access mechanism. 
-5. **Why are you using the keyword “sealed”? The singleton class has a private constructor that can stop the derivation process. Is the understanding correct?** Good catch. It was not mandatory but it is always better to show your intention clearly. I have used it to guard one special case-if you are tempted to use a derived nested class as below:
+4. **Tại sao việc tạo ra nhiều object lại là vấn đề đáng quan tâm?**
+   * Tạo object trong thực tế được xem là khá tốn kém.
+   * Thỉnh thoảng bạn có lẽ cần triển khai một hệ thống tập trung để dễ bảo trì. Điều này giúp bạn tạo ra một cơ chế truy cập toàn cục. 
+5. **Tại sao bạn sử dụng từ khóa “sealed”? Singleton class có một constructor là private, nó có thể chặn derivation process. Điều này chính xác đúng không?**  
+   Để ý tốt đấy. Điều đó \(việc sử dụng 'sealed'\) là không bắt buộc nhưng tốt hơn hết là thể hiện rõ ý định của mình. Sử dụng nó rất hữu ích trong trường hợp đặt biệt, đó là sử dụng `derived nested class` \(lớp lồng nhau\):
 
-> still translating...
+   ```csharp
+   //public sealed class Singleton
+   //Not using "sealed" keyword now
+   public class Singleton
+   {
+       private static readonly Singleton instance = new Singleton();
+       private static int numberOfInstances = 0;
+       //Private constructor is used to prevent
+       //creation of instances with 'new' keyword outside this class
+       //protected Singleton()
+       private Singleton()
+       {
+           Console.WriteLine("Instantiating inside the private constructor.");
+       
+           numberOfInstances++;
+           Console.WriteLine("Number of instances ={0}", numberOfInstances);
+       }
+       public static Singleton Instance
+       {
+           get
+           {
+               Console.WriteLine("We already have an instance now.Use it.");
+               return instance;
+           }
+       }
+       //The keyword "sealed" can guard this scenario.
+       public class NestedDerived : Singleton { }
+   }
+   ```
+
+   Với đoạn code trên \(chưa sử dụng `sealed`\) thì bạn hoàn toàn có thể tạo ra nhiều object:
+
+   ```csharp
+   Singleton.NestedDerived nestedClassObject1 = new Singleton.NestedDerived(); //1 
+   Singleton.NestedDerived nestedClassObject2 = new Singleton.NestedDerived(); //2
+   ```
+
+   Giờ bạn đã hiểu tại sao dùng `sealed` rồi chứ :\)
 
 ## Tham khảo thêm
 
