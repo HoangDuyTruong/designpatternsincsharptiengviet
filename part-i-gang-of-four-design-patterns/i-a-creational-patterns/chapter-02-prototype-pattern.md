@@ -150,10 +150,10 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
    * Việc thực hiện cơ chế nhân bản có thể sẽ rất thử thách nếu như các object đang xem xét không hỗ trợ cơ chế sao chép hoặc nếu có các circular reference \(tham chiếu vòng - cái này phụ thuộc cái kia\)
    * Trong ví dụ minh họa này, tôi đã sử dụng phương thức _**`MemberwiseClone()`**_ , nó sẽ thi hành cơ chế _**`shallow copy`**_ trong C\#. Thật ra, nó tạo một object rồi copy các field _**`nonstatic`**_ của  object hiện tại vào một object mới. 
 
-     MSDN nói thêm rằng:
+     MSDN cũng giải thích thêm về _**`MemberwiseClone`**_:
 
      _`For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`_  
-     Tham khảo thêm về shallow copy và deep copy: 
+     Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)
 
 ![](../../.gitbook/assets/image%20%285%29.png)
 
@@ -161,7 +161,6 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
 
 * [https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
 * [https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet](https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet)
-* [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)
 
 
 
