@@ -240,10 +240,14 @@ the field at all times
 
 Nói một cách đơn giản, từ khóa _volatile_ giúp bạn thực hiện một _serialize access mechanism_ \(cơ chế truy cập nối tiếp\). Nói cách khác, tất cả các thread sẽ theo dõi các thay đổi của bất kỳ thread nào khác theo thứ tự thực hiện của chúng. Nhớ rằng, từ khóa _volatile_ được áp dụng cho các field của class \(hoặc struct\). Bạn không thể xài nó cho local variables \(các biến cục bộ\).
 
-* **Tại sao việc tạo ra nhiều object lại là vấn đề đáng quan tâm?**
-  * Tạo object trong thực tế được xem là khá tốn kém.
-  * Thỉnh thoảng bạn có lẽ cần triển khai một hệ thống tập trung để dễ bảo trì. Điều này giúp bạn tạo ra một cơ chế truy cập toàn cục. 
-* **Tại sao bạn sử dụng từ khóa “sealed”? Singleton class có một constructor là private, nó có thể chặn derivation process. Điều này chính xác đúng không?** Để ý tốt đấy. Điều đó \(việc sử dụng 'sealed'\) là không bắt buộc nhưng tốt hơn hết là thể hiện rõ ý định của mình. Sử dụng nó rất hữu ích trong trường hợp đặt biệt, đó là sử dụng `derived nested class` \(lớp lồng nhau\):
+#### Tại sao việc tạo ra nhiều object lại là vấn đề đáng quan tâm?
+
+* Tạo object trong thực tế được xem là khá tốn kém.
+* Thỉnh thoảng bạn có lẽ cần triển khai một hệ thống tập trung để dễ bảo trì. Điều này giúp bạn tạo ra một cơ chế truy cập toàn cục. 
+
+#### Tại sao bạn sử dụng từ khóa “sealed”? Singleton class có một constructor là private, nó có thể chặn derivation process. Điều này chính xác đúng không?
+
+Nắm bắt tốt đấy. Điều đó \(việc sử dụng 'sealed'\) là không bắt buộc, nhưng tốt hơn hết là thể hiện rõ ý định của mình. Sử dụng nó rất hữu ích trong một trường hợp đặt biệt là sử dụng `derived nested class` \(lớp lồng nhau\):
 
 ```csharp
 //public sealed class Singleton
