@@ -10,7 +10,9 @@
 
 ## Khái niệm
 
-Tốt hơn là mô tả khái niệm của mẫu này thông qua ví dụ 😁 
+Tốt hơn là mô tả khái niệm của mẫu này thông qua ví dụ, nhưng đại khái có thể hiểu như vầy: 
+
+> Factory Method định nghĩa một method cho việc tạo đối tượng, và các lớp con hoặc là kế thừa hoặc là override để chỉ rõ đối tượng nào sẽ được tạo và tạo như thế nào.
 
 ## Ví dụ thực tế
 
