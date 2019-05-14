@@ -51,10 +51,10 @@ Ban đầu, đặc tả mẫu Singleton trong ngôn ngữ C++ có một chút kh
 
 Sau đây là những điểm đáng chú của phương pháp này:
 
-* `Common Language Runtime (CLR)` sẽ phụ trách quá trình khởi tạo biến.
+* _Common Language Runtime \(CLR\)_ sẽ phụ trách quá trình khởi tạo biến.
 * Bạn tạo một instance khi bất kỳ thành viên của class được tham chiếu tới.
-* `public static member` sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng `instantiation process` \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính `Instance` **\*\*của class \(nói cách khác, nó hỗ trợ khả năng** `lazy instantiation -`_**\_khởi tạo lúc sử dụng lần đầu tiên\). Từ khóa**_ `sealed` _**ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa**_ `readonly`\*\*\_ đảm bảo rằng quá trình khởi tạo biến `instance` diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
-* Constructor là `private`. Do đó bạn không thể khởi tạo class Singleton bên trong hàm `Main()`. Điều này sẽ giúp bạn trỏ đến một instance có thể đã tồn tại sẵn trong hệ thống.
+* _`public static`_ sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng instantiation process \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính _`Instance`_ của class \(nói cách khác, nó hỗ trợ khả năng lazy instantiation`-`khởi tạo lúc sử dụng lần đầu tiên_\). Từ khóa `sealed`_ ****ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa _`readonly`_đảm bảo rằng quá trình khởi tạo biến _`Instance`_ diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
+* Constructor là _`private`_. Do đó bạn không thể khởi tạo class Singleton bên trong hàm _`Main()`_. Điều này sẽ giúp bạn trỏ đến một instance có thể đã tồn tại sẵn trong hệ thống.
 
 ### Viết Code
 
