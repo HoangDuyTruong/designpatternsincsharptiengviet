@@ -25,9 +25,11 @@ Trong một nhà hàng, dựa vào sở thích, khẩu vị, yêu cầu của t�
 
 ## Ví dụ chuyên ngành
 
-Trong một ứng dụng, rất có thể bạn sử dụng nhiều loại database khác nhau cho người dùng khác nhau, ví dụ như một người thì dùng Oracle, người khác bạn lại dùng Sql Server. Bất cứ khi nào bạn cần thêm data vào database, bạn cần tạo ra hoặc là một _`SqlConnection`_ hoặc là một _`OracleConnection`_. Nếu bạn đặt code của mình vào câu lệnh _`if...else...`_ \(hoặc _`switch`_\), bạn sẽ phải viết rất nhiều code lặp đi lặp lại, điều này không dễ để maintain \(bảo trì\). Giả sử sau này bạn cần làm việc với một kiểu database khác ví dụ MySql, lúc đó sẽ là thảm họa. Mẫu thiết kế _`Factory Method`_ này sẽ giúp bạn giải quyết kiểu vấn đề như vậy. Ở đây chúng ta sẽ dùng một lớp trừu tượng \(_`IAnimalFactory`_ 😂 \) để định nghĩa một kiến trúc đơn giản. Theo định nghĩa, quá trình khởi tạo sẽ được thực hiện thông qua các lớp con được dẫn xuất từ lớp trừu tượng này.
+Trong một ứng dụng, rất có thể bạn sử dụng nhiều loại database khác nhau cho người dùng khác nhau, ví dụ như một người thì dùng Oracle, người khác bạn lại dùng Sql Server. Bất cứ khi nào bạn cần thêm data vào database, bạn cần tạo ra hoặc là một _`SqlConnection`_ hoặc là một _`OracleConnection`_. Nếu bạn đặt code của mình vào câu lệnh _`if...else...`_ \(hoặc _`switch`_\), bạn sẽ phải viết rất nhiều code lặp đi lặp lại, điều này không dễ để maintain \(bảo trì\). Giả sử sau này bạn cần làm việc với một kiểu database khác ví dụ MySql, lúc đó sẽ là thảm họa. Mẫu thiết kế _`Factory Method`_ này sẽ giúp bạn giải quyết kiểu vấn đề như vậy.
 
 ## Minh họa và giải thích
+
+Ở đây chúng ta sẽ dùng một lớp trừu tượng_`IAnimalFactory`_ . Theo định nghĩa, quá trình khởi tạo sẽ được thực hiện thông qua các lớp con được dẫn xuất từ lớp trừu tượng này.
 
 ### Class Diagram
 
