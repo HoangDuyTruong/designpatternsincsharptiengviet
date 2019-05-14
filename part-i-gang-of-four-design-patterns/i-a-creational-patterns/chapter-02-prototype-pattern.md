@@ -148,7 +148,7 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
 2. **Sử dụng mẫu thiết kế Prototype thì có những thử thách, khó khăn gì không?**
    * Các lớp con phải thực hiện cơ chế nhân bản hoặc sao chép.
    * Việc thực hiện cơ chế nhân bản có thể sẽ rất thử thách nếu như các object đang xem xét không hỗ trợ cơ chế sao chép hoặc nếu có các circular reference \(tham chiếu vòng - cái này phụ thuộc cái kia\)
-   * Trong ví dụ minh họa này, tôi đã sử dụng phương thức _**`MemberwiseClone()`**_ , nó sẽ thi hành cơ chế _**`shallow copy`**_ trong C\#. Thật ra, nó tạo một object rồi copy các field _**`nonstatic`**_ của  object hiện tại vào một object mới. 
+   * Trong ví dụ minh họa này, tôi đã sử dụng phương thức _**`MemberwiseClone()`**_ , nó sẽ thi hành cơ chế _**`shallow copy`**_ trong C\#. Đại khái, nó tạo một object rồi copy các field _**`nonstatic`**_ của  object hiện tại vào một object mới. 
 
      MSDN cũng giải thích thêm về _**`MemberwiseClone`**_:
 
