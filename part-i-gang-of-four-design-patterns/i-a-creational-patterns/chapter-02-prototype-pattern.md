@@ -157,6 +157,11 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
 
 ![](../../.gitbook/assets/image%20%285%29.png)
 
+3. Bạn có thể demo một cách copy bằng constructor?
+```csharp
+demo
+```
+
 ## Tham khảo thêm
 
 * [https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
