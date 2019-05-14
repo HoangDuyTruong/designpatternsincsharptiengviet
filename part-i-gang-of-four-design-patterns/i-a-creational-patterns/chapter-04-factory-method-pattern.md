@@ -1,5 +1,10 @@
 # Chapter 4: Factory Method Pattern
 
+{% hint style="warning" %}
+LƯU Ý:   
+CHƯƠNG NÀY VẪN CHƯA HOÀN THIỆN NHA MẤY CHA
+{% endhint %}
+
 ## GoF Definition
 
 Định nghĩa một giao diện \(interface\) cho việc tạo một đối tượng, nhưng để các lớp con quyết định lớp nào sẽ được tạo.
@@ -231,10 +236,6 @@ Chú ý rằng trong mỗi trường hợp bạn sẽ thấy cảnh bảo như s
 **Bạn nên luôn luôn chỉ định một factory method bằng từ khóa** _**`abstract`**_ **để các lớp con có thể hoàn thiện nó, đúng không?**
 
 **Tôi vẫn thấy rằng mẫu** _**`Factory Method`**_ **vẫn chả có gì khác biệt nhiều so với mẫu** _**`Simple Factory`**_**, đúng chứ hỉ?**
-
-{% hint style="warning" %}
-Còn tiếp...
-{% endhint %}
 
 
 
