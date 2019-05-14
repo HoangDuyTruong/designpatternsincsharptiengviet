@@ -2,7 +2,7 @@
 
 ## GoF Definition
 
-Đảm bảo rằng một `class` \(lớp\) chỉ có **duy nhất** một `instance` \(thể hiện\), và cung cấp một nơi chung nhất, toàn cục để truy cập vào lớp đó.
+Đảm bảo rằng một `class` \(lớp\) chỉ có **duy nhất** một `instance` \(thể hiện\), và cung cấp một điểm chung, toàn cục để truy cập vào lớp đó.
 
 ## Khái niệm
 
