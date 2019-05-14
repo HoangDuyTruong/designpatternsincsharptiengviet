@@ -36,7 +36,7 @@ Do sự khác biệt về ngôn ngữ và những đặc thù của tiếng Vi�
 
 * Không nhất thiết phải dịch toàn bộ từ hoặc cụm từ sang tiếng Việt, nhất là những từ chuyên ngành \(framework, file, component…\) Đối với những từ dịch được nhưng nghe lạ tai trong tiếng Việt, hãy dùng quy ước tiếng Anh \(nghĩa tiếng Việt\) cho lần đầu tiên, và dùng tiếng Anh từ đó về sau. Ví dụ:
 
-  > Singleton pattern \(mẫu thiết kế Singleton\) là một trong những mẫu thiết kế đơn giản nhất. Singleton pattern được nhóm trong nhóm Creational patterns \(Nhóm Khởi tạo\), cung cấp một trong những cách tốt nhất để tạo object...
+  > Singleton pattern \(mẫu thiết kế Singleton\) là một trong những mẫu thiết kế đơn giản nhất. Singleton pattern được xếp vào nhóm Creational patterns \(Nhóm Khởi tạo\), cung cấp một trong những cách tốt nhất để tạo object...
 
 * Đối với những từ hoặc cụm từ hoàn toàn không có từ ngữ tương đương trong tiếng Việt, hãy thông báo để chúng ta cùng thảo luận.
 * Không nhất thiết phải dịch 1:1. Đôi khi chúng ta nên thêm hoặc bớt vài từ hoặc thậm chí là cả một câu để bản dịch được tự nhiên hơn, miễn là truyền tải được đúng và đủ ý.

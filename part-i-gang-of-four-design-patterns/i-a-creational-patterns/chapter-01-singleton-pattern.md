@@ -53,7 +53,7 @@ Sau đây là những điểm đáng chú của phương pháp này:
 
 * _`Common Language Runtime (CLR)`_ sẽ phụ trách quá trình khởi tạo biến.
 * Bạn tạo một instance khi bất kỳ thành viên của class được tham chiếu tới.
-* _**`public static member`**_ sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng _`instantiation process`_ \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính `Instance` ****của class \(nói cách khác, nó hỗ trợ khả năng _`lazy instantiation`_\). Từ khóa _**`sealed`**_ ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa _**`readonly`**_ đảm bảo rằng quá trình khởi tạo biến `instance` diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
+* _**`public static member`**_ sẽ đảm bảo có một điểm toàn cục để truy cập, nó xác nhận rằng _`instantiation process`_ \(quá trình khởi tạo\) sẽ không chạy cho đến khi bạn gọi thuộc tính `Instance` ****của class \(nói cách khác, nó hỗ trợ khả năng _`lazy instantiation -`_khởi tạo lúc sử dụng lần đầu tiên\). Từ khóa _**`sealed`**_ ngăn việc dẫn xuất của lớp \(do đó các lớp con của nó sẽ không bị lạm dụng - hoặc sử dụng sai\), và từ khóa _**`readonly`**_ đảm bảo rằng quá trình khởi tạo biến `instance` diễn ra vào lúc khởi tạo tĩnh \(static initialization\).
 * Constructor là _**`private`**_. Do đó bạn không thể khởi tạo class Singleton bên trong hàm _**`Main()`**_. Điều này sẽ giúp bạn trỏ đến một instance có thể đã tồn tại sẵn trong hệ thống.
 
 ### Viết Code
