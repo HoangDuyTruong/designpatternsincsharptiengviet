@@ -220,17 +220,17 @@ Chú ý rằng trong mỗi trường hợp bạn sẽ thấy cảnh bảo như s
 
 ## Hỏi & Đáp
 
-**Why have you separated the CreateAnimal\(\) method from client code?**
+**Tại sao tách phương thức CreateAnimal\(\) ra khỏi client \(Main.cs\)?**
 
-**What are the advantages of using a factory like this?**
+**Lợi ích của việc sử dụng mẫu Factory Method?**
 
-**What are the challenges of using a factory like this?**
+**Sử dụng mẫu này có những thử thách/khó khăn gì không?**
 
-**I am seeing that the Factory Method pattern is supporting two parallel hierarchies. Is this understanding correct?**
+**Tôi thấy rằng mẫu Factory Method này đang hỗ trợ 2 phân lớp song song, cách hiểu này có đúng không?**
 
-**You should always mark the factory method with an abstract keyword so that subclasses can complete them. Is that understanding correct?**
+**Bạn nên luôn luôn chỉ định một factory method bằng từ khóa** _**`abstract`**_ **để các lớp con có thể hoàn thiện nó, đúng không?**
 
-**It still appears to me that the Factory Method pattern is not that much different from the Simple Factory pattern. Is that understanding correct?**
+**Tôi vẫn thấy rằng mẫu** _**`Factory Method`**_ **vẫn chả có gì khác biệt nhiều so với mẫu** _**`Simple Factory`**_**, đúng chứ hỉ?**
 
 {% hint style="warning" %}
 Còn tiếp...
