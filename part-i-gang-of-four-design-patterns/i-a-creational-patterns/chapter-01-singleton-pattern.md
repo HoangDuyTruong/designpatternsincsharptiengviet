@@ -35,13 +35,13 @@ Có một số đặc điểm chính khi triển khai code dưới đây:
 
 Hình 1.1 Là class diagram minh họa cho mẫu Singleton
 
-![H&#xEC;nh 1-1. Class diagram](../../.gitbook/assets/image%20%284%29.png)
+![H&#xEC;nh 1-1. Class diagram](../../.gitbook/assets/image.png)
 
 ### Solution Explorer View
 
 Hình 1.2 trình bày high-level structure \(cấu trúc bậc cao / cấu trúc chi tiết hơn\) của các thành phần trong chương trình
 
-![H&#xEC;nh 1-2. Solution Explorer View](../../.gitbook/assets/image%20%287%29.png)
+![H&#xEC;nh 1-2. Solution Explorer View](../../.gitbook/assets/image%20%281%29.png)
 
 ### Thảo luận
 
@@ -132,7 +132,7 @@ Only one instance exists.
 
 Xem xét đoạn code sau. Giả sử bạn đã thêm một dòng code \(được tô đậm\) trong class Singleton
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 Và method Main\(\) của bạn như vầy:
 

@@ -20,21 +20,21 @@ Cứ cho là bạn đã có một ứng dụng ổn định. Trong tương lai, 
 
 Trong ví dụ minh họa này, tôi sẽ làm theo structure \(cấu trúc, kiến trúc\) được trình bày trong hình 2-1 ngay dưới đây:
 
-![H&#xEC;nh 2-1. V&#xED; d&#x1EE5; Prototype](../../.gitbook/assets/image%20%281%29.png)
+![H&#xEC;nh 2-1. V&#xED; d&#x1EE5; Prototype](../../.gitbook/assets/image%20%283%29.png)
 
-Ở đây, _`BasicCar`_là một prototype, _`Nano`_ và _`Ford`_ là concrete prototypes \(những khuôn mẫu cụ thể\), và chúng đã được implement phương thức _`Clone()`_- là phương thức đã được định nghĩa trong _`BasicCar.`_ Hãy chú ý rằng trong ví dụ này tôi đã tạo một object _`BasicCar`_ với một vài _price_ \(giá tiền\) mặt định. Sau đó tôi chỉnh sửa _price_ cho mỗi model. _`Program.cs`_ được xem là_**`client`**_- là thứ được dùng để chạy chương trình chắc ai cũng biết rồi.
+Ở đây, `BasicCar`_\_là một prototype,_ `Nano` _và_ `Ford` _là concrete prototypes \(những khuôn mẫu cụ thể\), và chúng đã được implement phương thức_ `Clone()`_- là phương thức đã được định nghĩa trong_ `BasicCar.` _Hãy chú ý rằng trong ví dụ này tôi đã tạo một object_ `BasicCar` _với một vài \_price_ \(giá tiền\) mặt định. Sau đó tôi chỉnh sửa _price_ cho mỗi model. `Program.cs` được xem là`client`- là thứ được dùng để chạy chương trình chắc ai cũng biết rồi.
 
 ### Class Diagram
 
-![H&#xEC;nh 2-2. Class diagram](../../.gitbook/assets/image%20%288%29.png)
+![H&#xEC;nh 2-2. Class diagram](../../.gitbook/assets/image%20%284%29.png)
 
 ### Directed Graph Document \(Đồ thị có hướng\)
 
-![H&#xEC;nh 2-3. Directed Graph Document](../../.gitbook/assets/image.png)
+![H&#xEC;nh 2-3. Directed Graph Document](../../.gitbook/assets/image%20%285%29.png)
 
 ### Solution Explorer View
 
-![H&#xEC;nh 2-4. Solution Explorer View](../../.gitbook/assets/image%20%289%29.png)
+![H&#xEC;nh 2-4. Solution Explorer View](../../.gitbook/assets/image%20%286%29.png)
 
 ### Giờ code đến rồi
 
@@ -135,7 +135,7 @@ Car is: Ford Yellow, and it's price is Rs. 886026
 ```
 
 {% hint style="info" %}
-Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của bạn bởi vì chỗ này tôi generate một price  ngẫu nhiên trong phương thức _`SetPrice()`_ bên trong _`BasicCar`_ class. Nhưng tôi đã đảm bảo rằng price của _`Ford`_ sẽ lớn hơn _`Nano`._
+Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của bạn bởi vì chỗ này tôi generate một price ngẫu nhiên trong phương thức `SetPrice()` bên trong `BasicCar` class. Nhưng tôi đã đảm bảo rằng price của `Ford` sẽ lớn hơn `Nano`_._
 {% endhint %}
 
 ## Q&A Session
@@ -144,29 +144,78 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
    * Bạn có thể đưa thêm vào hoặc loại bỏ các product lúc runtime
    * Trong một vài bối cảnh, bạn có thể tạo mới các instance với chi phí rẻ hơn
    * Tập trung vào việc thay đổi, tùy biến hơn là lo lắng về sự phức tạo trong quá trình tạo ra một instance mới.
-   * Lúc viết code để thực thi ứng dụng thì không cần lo việc tạo ra object, chỉ cần copy object đã có. 
+   * Lúc viết code để thực thi ứng dụng thì không cần lo việc tạo ra object, chỉ cần copy object đã có.  
 2. **Sử dụng mẫu thiết kế Prototype thì có những thử thách, khó khăn gì không?**
    * Các lớp con phải thực hiện cơ chế nhân bản hoặc sao chép.
    * Việc thực hiện cơ chế nhân bản có thể sẽ rất thử thách nếu như các object đang xem xét không hỗ trợ cơ chế sao chép hoặc nếu có các circular reference \(tham chiếu vòng - cái này phụ thuộc cái kia\)
-   * Trong ví dụ minh họa này, tôi đã sử dụng phương thức _**`MemberwiseClone()`**_ , nó sẽ thi hành cơ chế _**`shallow copy`**_ trong C\#. Đại khái, nó tạo một object rồi copy các field _**`nonstatic`**_ của  object hiện tại vào một object mới. 
+   * Trong ví dụ minh họa này, tôi đã sử dụng phương thức `MemberwiseClone()` , nó sẽ thi hành cơ chế `shallow copy` trong C\#. Đại khái, nó tạo một object rồi copy các field `nonstatic` của object hiện tại vào một object mới.
 
-     MSDN cũng giải thích thêm về _**`MemberwiseClone`**_:
+     MSDN cũng giải thích thêm về `MemberwiseClone`:
 
-     _`For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`_  
-     Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)
+     `For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`  
+     Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)  
 
-![](../../.gitbook/assets/image%20%285%29.png)
 
-3. Bạn có thể demo một cách copy bằng constructor?
-```csharp
-demo
-```
+     ![](../../.gitbook/assets/image%20%287%29.png)
+3. **Bạn có thể demo một cách copy bằng constructor?**
+
+   ```csharp
+   class Student
+   {
+       int rollNo;
+       string name;
+       //Instance Constructor
+       public Student(int rollNo, string name)
+       {
+           this.rollNo = rollNo;
+           this.name = name;
+       }
+       //Copy Constructor
+       public Student(Student student)
+       {
+           this.name = student.name;
+           this.rollNo = student.rollNo;
+       }
+       public void DisplayDetails()
+       {
+           Console.WriteLine("Student name :{0}, Roll no: {1}",
+           name, rollNo);
+       }
+   }
+
+   class Program
+   {
+       static void Main(string[] args)
+       {
+           Console.WriteLine("***A simple copy constructor demo***\n");
+           Student student1 = new Student(1, "John");
+           Console.WriteLine("The details of student1 is as follows:");
+           student1.DisplayDetails();
+           Console.WriteLine("\nCopying student1 to student2 now");
+           Student student2 = new Student(student1);
+           Console.WriteLine("The details of student2 is as follows:");
+           student2.DisplayDetails();
+           Console.ReadKey();
+       }
+   }
+   ```
+
+   _Kết quả khi chạy chương trình:_
+
+   ```text
+   ***A simple copy constructor demo***
+
+   The details of student1 is as follows:
+   Student name :John, Roll no: 1
+
+   Copying student1 to student2 now
+   The details of student2 is as follows:
+   Student name :John, Roll no: 1
+   ```
 
 ## Tham khảo thêm
 
 * [https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
 * [https://tndhuy.wordpress.com/2011/05/29/prototype/](https://tndhuy.wordpress.com/2011/05/29/prototype/)
 * [https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet](https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet)
-
-
 
