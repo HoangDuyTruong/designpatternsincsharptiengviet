@@ -140,78 +140,81 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
 
 ## Q&A Session
 
-1. **Lợi ích của việc dùng mẫu thiết kế Prototype?**
-   * Bạn có thể đưa thêm vào hoặc loại bỏ các product lúc runtime
-   * Trong một vài bối cảnh, bạn có thể tạo mới các instance với chi phí rẻ hơn
-   * Tập trung vào việc thay đổi, tùy biến hơn là lo lắng về sự phức tạo trong quá trình tạo ra một instance mới.
-   * Lúc viết code để thực thi ứng dụng thì không cần lo việc tạo ra object, chỉ cần copy object đã có.  
-2. **Sử dụng mẫu thiết kế Prototype thì có những thử thách, khó khăn gì không?**
-   * Các lớp con phải thực hiện cơ chế nhân bản hoặc sao chép.
-   * Việc thực hiện cơ chế nhân bản có thể sẽ rất thử thách nếu như các object đang xem xét không hỗ trợ cơ chế sao chép hoặc nếu có các circular reference \(tham chiếu vòng - cái này phụ thuộc cái kia\)
-   * Trong ví dụ minh họa này, tôi đã sử dụng phương thức `MemberwiseClone()` , nó sẽ thi hành cơ chế `shallow copy` trong C\#. Đại khái, nó tạo một object rồi copy các field `nonstatic` của object hiện tại vào một object mới.
+#### **Lợi ích của việc dùng mẫu thiết kế Prototype?**
 
-     MSDN cũng giải thích thêm về `MemberwiseClone`:
+* Bạn có thể đưa thêm vào hoặc loại bỏ các product lúc runtime
+* Trong một vài bối cảnh, bạn có thể tạo mới các instance với chi phí rẻ hơn
+* Tập trung vào việc thay đổi, tùy biến hơn là lo lắng về sự phức tạo trong quá trình tạo ra một instance mới.
+* Lúc viết code để thực thi ứng dụng thì không cần lo việc tạo ra object, chỉ cần copy object đã có.  
 
-     `For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`  
-     Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)  
+**Sử dụng mẫu thiết kế Prototype thì có những thử thách, khó khăn gì không?**
 
+* Các lớp con phải thực hiện cơ chế nhân bản hoặc sao chép.
+* Việc thực hiện cơ chế nhân bản có thể sẽ rất thử thách nếu như các object đang xem xét không hỗ trợ cơ chế sao chép hoặc nếu có các circular reference \(tham chiếu vòng - cái này phụ thuộc cái kia\)
+* Trong ví dụ minh họa này, tôi đã sử dụng phương thức `MemberwiseClone()` , nó sẽ thi hành cơ chế `shallow copy` trong C\#. Đại khái, nó tạo một object rồi copy các field `nonstatic` của object hiện tại vào một object mới.
 
-     ![](../../.gitbook/assets/img-2-shallowcopy-deepcopy.png)
-3. **Bạn có thể demo một cách copy bằng constructor?**
+  MSDN cũng giải thích thêm về `MemberwiseClone`:
 
-   ```csharp
-   class Student
-   {
-       int rollNo;
-       string name;
-       //Instance Constructor
-       public Student(int rollNo, string name)
-       {
-           this.rollNo = rollNo;
-           this.name = name;
-       }
-       //Copy Constructor
-       public Student(Student student)
-       {
-           this.name = student.name;
-           this.rollNo = student.rollNo;
-       }
-       public void DisplayDetails()
-       {
-           Console.WriteLine("Student name :{0}, Roll no: {1}",
-           name, rollNo);
-       }
-   }
+  `For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`  
+  Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)
 
-   class Program
-   {
-       static void Main(string[] args)
-       {
-           Console.WriteLine("***A simple copy constructor demo***\n");
-           Student student1 = new Student(1, "John");
-           Console.WriteLine("The details of student1 is as follows:");
-           student1.DisplayDetails();
-           Console.WriteLine("\nCopying student1 to student2 now");
-           Student student2 = new Student(student1);
-           Console.WriteLine("The details of student2 is as follows:");
-           student2.DisplayDetails();
-           Console.ReadKey();
-       }
-   }
-   ```
+![](../../.gitbook/assets/image%20%282%29.png)
 
-   _Kết quả khi chạy chương trình:_
+**Bạn có thể demo một cách copy bằng constructor?**
 
-   ```text
-   ***A simple copy constructor demo***
+```csharp
+class Student
+{
+    int rollNo;
+    string name;
+    //Instance Constructor
+    public Student(int rollNo, string name)
+    {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+    //Copy Constructor
+    public Student(Student student)
+    {
+        this.name = student.name;
+        this.rollNo = student.rollNo;
+    }
+    public void DisplayDetails()
+    {
+        Console.WriteLine("Student name :{0}, Roll no: {1}",
+        name, rollNo);
+    }
+}
 
-   The details of student1 is as follows:
-   Student name :John, Roll no: 1
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("***A simple copy constructor demo***\n");
+        Student student1 = new Student(1, "John");
+        Console.WriteLine("The details of student1 is as follows:");
+        student1.DisplayDetails();
+        Console.WriteLine("\nCopying student1 to student2 now");
+        Student student2 = new Student(student1);
+        Console.WriteLine("The details of student2 is as follows:");
+        student2.DisplayDetails();
+        Console.ReadKey();
+    }
+}
+```
 
-   Copying student1 to student2 now
-   The details of student2 is as follows:
-   Student name :John, Roll no: 1
-   ```
+_Kết quả khi chạy chương trình:_
+
+```text
+***A simple copy constructor demo***
+
+The details of student1 is as follows:
+Student name :John, Roll no: 1
+
+Copying student1 to student2 now
+The details of student2 is as follows:
+Student name :John, Roll no: 1
+```
 
 ## Tham khảo thêm
 
