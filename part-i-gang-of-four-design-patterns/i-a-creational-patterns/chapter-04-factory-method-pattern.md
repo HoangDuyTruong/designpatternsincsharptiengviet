@@ -214,7 +214,7 @@ Dogs prefer barking...
 ### Phân tích
 
 Chú ý rằng trong mỗi trường hợp bạn sẽ thấy cảnh bảo như sau:_`"…You cannot ignore parent rules."`_  
-**Giải thích**: Ý chỗ này nó muốn nói các lớp con sẽ làm theo qui tắc mà _`IAnimalFactory.MakeAnimal()`_ đã qui định, tức là sẽ thực thi 2 dòng lệnh _`animal.Speak()`_ và _`animal.Action()`_
+**Giải thích**: Ý chỗ này nó muốn nói các lớp con sẽ luôn chạy những dòng code trong  _`IAnimalFactory.MakeAnimal()`_, tức là sẽ gọi lệnh _`animal.Speak()`_ và _`animal.Action()`_
 
 ## Hỏi & Đáp
 
