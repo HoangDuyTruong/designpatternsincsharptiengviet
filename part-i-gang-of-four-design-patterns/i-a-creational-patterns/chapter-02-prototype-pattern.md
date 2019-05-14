@@ -160,6 +160,7 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
 ## Tham khảo thêm
 
 * [https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
+* [https://tndhuy.wordpress.com/2011/05/29/prototype/](https://tndhuy.wordpress.com/2011/05/29/prototype/)
 * [https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet](https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet)
 
 
