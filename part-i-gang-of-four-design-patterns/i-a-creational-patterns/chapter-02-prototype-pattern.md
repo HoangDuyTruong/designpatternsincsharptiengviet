@@ -6,7 +6,7 @@ Xác định các kiểu của các object muốn tạo ra bằng cách sử d�
 
 ## Khái niệm
 
-Mẫu Prototype cung cấp một phương thức thay thế cho việc khởi tạo các đối tượng mới, bằng cách sao chép hoặc nhân bản một instance của một đối tượng hiện có. Điều này có thể giúp giảm thiểu chi phí khi tạo một instance mới bằng cách sử dụng khái niệm này.
+Mẫu Prototype cung cấp một phương thức thay thế cho việc khởi tạo các đối tượng mới, bằng cách sao chép hoặc nhân bản một instance của một đối tượng hiện có. Điều này có thể giúp giảm thiểu chi phí.
 
 ## Ví dụ thực tế
 
