@@ -20,21 +20,21 @@ Cứ cho là bạn đã có một ứng dụng ổn định. Trong tương lai, 
 
 Trong ví dụ minh họa này, tôi sẽ làm theo structure \(cấu trúc, kiến trúc\) được trình bày trong hình 2-1 ngay dưới đây:
 
-![H&#xEC;nh 2-1. V&#xED; d&#x1EE5; Prototype](../../.gitbook/assets/image%20%283%29.png)
+![H&#xEC;nh 2-1. V&#xED; d&#x1EE5; Prototype](../../.gitbook/assets/img-2-1.png)
 
 Ở đây, `BasicCar`_\_là một prototype,_ `Nano` _và_ `Ford` _là concrete prototypes \(những khuôn mẫu cụ thể\), và chúng đã được implement phương thức_ `Clone()`_- là phương thức đã được định nghĩa trong_ `BasicCar.` _Hãy chú ý rằng trong ví dụ này tôi đã tạo một object_ `BasicCar` _với một vài \_price_ \(giá tiền\) mặt định. Sau đó tôi chỉnh sửa _price_ cho mỗi model. `Program.cs` được xem là`client`- là thứ được dùng để chạy chương trình chắc ai cũng biết rồi.
 
 ### Class Diagram
 
-![H&#xEC;nh 2-2. Class diagram](../../.gitbook/assets/image%20%284%29.png)
+![H&#xEC;nh 2-2. Class diagram](../../.gitbook/assets/img-2-2.png)
 
 ### Directed Graph Document \(Đồ thị có hướng\)
 
-![H&#xEC;nh 2-3. Directed Graph Document](../../.gitbook/assets/image%20%285%29.png)
+![H&#xEC;nh 2-3. Directed Graph Document](../../.gitbook/assets/img-2-3.png)
 
 ### Solution Explorer View
 
-![H&#xEC;nh 2-4. Solution Explorer View](../../.gitbook/assets/image%20%286%29.png)
+![H&#xEC;nh 2-4. Solution Explorer View](../../.gitbook/assets/img-2-4.png)
 
 ### Giờ code đến rồi
 
@@ -156,7 +156,7 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
      Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)  
 
 
-     ![](../../.gitbook/assets/image%20%287%29.png)
+     ![](../../.gitbook/assets/img-2-shallowcopy-deepcopy.png)
 3. **Bạn có thể demo một cách copy bằng constructor?**
 
    ```csharp
