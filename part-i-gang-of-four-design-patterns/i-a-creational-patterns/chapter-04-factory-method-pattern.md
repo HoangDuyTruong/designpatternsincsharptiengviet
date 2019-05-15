@@ -257,5 +257,10 @@ Nếu bạn nhìn vào các lớp con trong ví dụ của cả 2 chương, bạ
 
 In this context, nhớ rằng theo định nghĩa của GoF \(mẫu Factory Method cho phép một class trì hoãn việc khởi tạo và để các lớp con tự quyết định\). Vì vậy, trong phần demo của mẫu Simple Factory, bạn có thể bỏ qua abstract class IAnimalFactory và phương thức abstract của nó CreateAnimal\(\) và thay vào đó chỉ sử dụng class SimpleFactory. Trong trường hợp đó, bạn sẽ không cần override phương thức CreateAnimal\(\); Ngoài ra, nó được xem là good practice để code một interface/abstract class \(như trong trường hợp này\). Cơ chế này cũng cho bạn sự linh hoạt để đưa một vài hành vi phổ biến \(common behavior\) vào abstract class.
 
+## Tham khảo thêm
 
+* \*\*\*\*[**Phỏng vấn 2 mẫu thiết kế Abstract Factory và Factory Pattern**](http://nthoai.blogspot.com/2008/06/abstract-factory-and-factory-method.html)\*\*\*\*
+* [https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
+* [https://viblo.asia/p/factory-method-pattern-trong-java-4dbZNoNQlYM](https://viblo.asia/p/factory-method-pattern-trong-java-4dbZNoNQlYM)
+* \*\*\*\*[**Design Pattern từ đơn giản đến phức tạp \(P2** _**Factory method pattern**_**\)**](https://medium.com/edumall/design-pattern-t%E1%BB%AB-%C4%91%C6%A1n-gi%E1%BA%A3n-%C4%91%E1%BA%BFn-ph%E1%BB%A9c-t%E1%BA%A1p-p2-factory-method-pattern-37516e5a668e)\*\*\*\*
 

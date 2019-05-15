@@ -227,3 +227,8 @@ But yes, in this example, you could put all the stuff directly into the concrete
 
 Bạn có thể, nhưng phải nhớ các hạn chế liên quan đến _`static class`_. Ví dụ như bạn không thể thừa kế chúng, v.v.
 
+## Tham khảo thêm
+
+* [https://appstechviet.wordpress.com/2015/08/03/design-patterns-the-simple-factory-pattern/](https://appstechviet.wordpress.com/2015/08/03/design-patterns-the-simple-factory-pattern/)
+* [http://swiftyvn.com/?p=1822](http://swiftyvn.com/?p=1822)
+
