@@ -194,17 +194,36 @@ instantiated"
 
 **Trong ví dụ này,  tui thấy là các client đang ủy thác việc tạo đối tượng thông qua mẫu Simple Factory. Nhưng thay vì như vậy, chúng có thể tạo object trực tiếp với keyword** _**`new`**_**. Đúng không?**
 
+Không, có 1 vài lý do sau:
 
+* Một trong những nguyên lý chính trong thiết kế hướng đối tượng là chia tách phần dễ thay đổi khỏi các phần còn lại.
 
+  Trong trường hợp này thì chỉ có quá trình tạo object là thay đổi.   
+  You can assume that these animals must speak and perform some actions and that part of code does not need to vary inside the client code. So, in the future, if there is any change required in the creation process, you need to change only the CreateAnimal\(\) method of the SimpleFactory class. The client code will be unaffected because of those changes.
+
+* You do not want to put lots of if-else blocks \(or switch statements\) inside the client body. That makes your code clumsy.
+* How you are creating the objects is hidden from the client code. This kind of abstraction promotes security.
+
+  
 **Có khó khăn gì với mẫu thiết kế này hem?**
 
+Nếu bạn muốn thêm hoặc xóa bớt vài em animal, bạn cần phải chỉnh sửa phương thức CreateAnimal\(\). Điều này vi phạm nguyên lý open/closed của SOLID \(cơ bản thì nguyên lý đó nói mình nên đóng cho việc chỉnh sửa và mở cho việc mở rộng\)
 
+**Lưu ý:** Các nguyên lý SOLID  được đề xướng bởi Robert C. Martin. Bạn có thể học thêm ở đây: [https://en.wikipedia.org/wiki/SOLID\_\(objectoriented\_design](https://en.wikipedia.org/wiki/SOLID_%28objectoriented_design)\).  
+  
+Đại khái ta có thể tóm lược các nguyên lý của SOLID thành một câu như vầy \(cái này từ người dịch 😅\): 
 
+> Nêu code và phân chia projects, features, classes... thành những thành phần nhỏ hơn, chuyên biệt, cô đọng, dễ mở rộng và không nên phụ thuộc lẫn nhau.
+
+  
 **Có thể nào bỏ qua** _**`ISimpleFactory`**_ **trong ví dụ trên?**
 
+Programming with an abstract class or an interface is always a good practice. This approach can prevent you from lots of changes in the future because any new class can simply implement the interface and settle down in the architecture through polymorphism. But if you solely depend on concrete classes, you need to change your code when you want to integrate a new class in the architecture, and in that case, you will violate the rule that says that your code should be closed for modification.
 
+But yes, in this example, you could put all the stuff directly into the concrete class SimpleFactory. You do not need to defer the instantiation process to the subclass. \(However, for a factory method pattern, it is mandatory. In this context, remember the GoF definition, which says a factory method lets a class defer instantiation to subclasses.\)
 
+  
 **Có thể tạo một** _**`factory`**_ **static class ?**
 
-
+Bạn có thể, nhưng phải nhớ các hạn chế liên quan đến _`static class`_. Ví dụ như bạn không thể thừa kế chúng, v.v.
 
