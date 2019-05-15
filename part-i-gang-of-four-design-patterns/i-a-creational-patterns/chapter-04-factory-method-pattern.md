@@ -1,13 +1,8 @@
 # Chapter 4: Factory Method Pattern
 
-{% hint style="warning" %}
-LƯU Ý:   
-CHƯƠNG NÀY VẪN CHƯA HOÀN THIỆN NHA MẤY CHA
-{% endhint %}
-
 ## GoF Definition
 
-Định nghĩa một giao diện \(interface\) cho việc tạo một đối tượng, nhưng để các lớp con quyết định lớp nào sẽ được tạo.
+Định nghĩa một giao diện \(interface\) cho việc tạo một đối tượng, nhưng để các lớp con quyết định cái gì sẽ được tạo.
 
 {% hint style="info" %}
 **Note:** Để hiểu mẫu thiết kế này, tôi đề nghị bạn tham khảo [Chapter 24: Simple Factory pattern](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md). Mẫu thiết kế _`Simple Factory`_ không thuộc các mẫu thiết kế của GOF, cho nên việc thảo luận về mẫu _`Simple Factory`_ sẽ được để trong phần 2 của tài liệu này. Mẫu _`Factory Method`_ sẽ rõ nghĩa hơn nếu bạn đã hiểu điểm mạnh điểm yếu của mẫu _`Simple Factory`_ 
@@ -260,7 +255,7 @@ Tuy nhiên để thấy được sự mãnh mẽ của mẫu thiết kế Factor
 
 Nếu bạn nhìn vào các lớp con trong ví dụ của cả 2 chương, bạn có thể thấy một vài điểm chung, nhưng bạn không nên quên mục tiêu chinh của mẫu _`Factory Method`_ là cung cấp cho bạn một bộ khung mà các lớp con khác nhau có thể tạo ra các product khác nhau. Còn đối với trường hợp của _`Simple Factory`_, bạn không thể thay đổi các product theo cách tương tự. Bạn có thể nghĩ _`Simple Factory`_ là giao dịch một lần \(one-time deal\), nhưng quan trọng nhất, phần _`"creational"`_ của bạn sẽ không đóng cho việc sửa đổi. Bất cứ khi nào muốn thêm class mới, bạn lại phải thêm _`if...else...`_ hoặc _`switch`_ vào factory class của mẫu _`Simple Factory`_.
 
-In this context, remember the GoF definition \(“The Factory Method pattern lets a class defer instantiation to subclasses.”\). So, in the Simple Factory pattern demonstration, you could omit the abstract class IAnimalFactory and its abstract method CreateAnimal\(\) and instead use only one SimpleFactory class. In that case, you would not need to override the CreateAnimal\(\) method; in addition, it’s considered a good practice to code to an interface/abstract class \(as in this case\). Also, this mechanism provides you with the flexibility to put some common behavior in the abstract class
+In this context, nhớ rằng theo định nghĩa của GoF \(mẫu Factory Method cho phép một class trì hoãn việc khởi tạo và để các lớp con tự quyết định\). Vì vậy, trong phần demo của mẫu Simple Factory, bạn có thể bỏ qua abstract class IAnimalFactory và phương thức abstract của nó CreateAnimal\(\) và thay vào đó chỉ sử dụng class SimpleFactory. Trong trường hợp đó, bạn sẽ không cần override phương thức CreateAnimal\(\); Ngoài ra, nó được xem là good practice để code một interface/abstract class \(như trong trường hợp này\). Cơ chế này cũng cho bạn sự linh hoạt để đưa một vài hành vi phổ biến \(common behavior\) vào abstract class.
 
 
 
