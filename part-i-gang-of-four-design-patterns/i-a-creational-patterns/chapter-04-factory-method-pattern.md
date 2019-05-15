@@ -33,7 +33,7 @@ Trong một ứng dụng, rất có thể bạn sử dụng nhiều loại datab
 
 ### Class Diagram
 
-![H&#xEC;nh 4-1. Class diagram](../../.gitbook/assets/img-4-1.png)
+![t](../../.gitbook/assets/img-4-1.png)
 
 ### Directed Graph Document
 
@@ -229,17 +229,38 @@ Chú ý rằng trong mỗi trường hợp bạn sẽ thấy cảnh bảo như s
 
 **Tại sao tách phương thức CreateAnimal\(\) ra khỏi client \(Main.cs\)?**
 
+Việc này có mục đích đó. Tôi muốn các lớp con tạo ra các đối tượng chuyên biệt. If you look carefully, you will also find that only this “creational part” varies across the products. I discussed this in detail in the “Q&A Session” section of [Chapter 24](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md)
+
 **Lợi ích của việc sử dụng mẫu Factory Method?**
+
+* Bạn đang tách code thay đổi từ code không thay đổi, nghĩa là những lợi thế của việc sử dụng mẫu Simple Factory vẫn còn đó. Việc này giúp maintain code dễ hơn.
+* Code này không được liên kết chặt chẽ, cho nên bạn có thể thêm các class mới như Lion, Beer... bất cứ lúc nào mà không cần thay đổi cấu trúc hiện tại, nói cách khác, tôi đã tuân theo nguyên lý "closed for modification but open for extension" \(đóng với việc sửa đổi nhưng mở cho việc mở rộng\) - một trong những nguyên lý của S.O.L.I.D
 
 **Sử dụng mẫu này có những thử thách/khó khăn gì không?**
 
-**Tôi thấy rằng mẫu Factory Method này đang hỗ trợ 2 phân lớp song song, cách hiểu này có đúng không?**
+Humm, nếu bạn cần làm việc với nhiều kiểu đối tượng khác nhau thì hiệu năng chung của hệ thống có thể bị ảnh hưởng.
+
+**Tôi thấy rằng mẫu Factory Method này đang hỗ trợ 2 parallel hierarchies \(cây phân cấp song song\), cách hiểu này có đúng không?**
+
+Đúng đấy, nhìn vào class diagram dễ dàng thấy mẫu này hỗ trợ 2 cây phân cấp song song.
+
+![](../../.gitbook/assets/img-4-4.png)
+
+Trong ví dụ này _`IAnimalFactory, DogFactory, and TigerFactory`_ được đặt trong một cây phân cấp, còn _`IAnimal, Dog, and Tiger`_ nằm trong cây phân cấp khác, nên bạn có thể thấy rằng creation và các creation/product của nó là 2 cây song song, các node của nó cũng tương ứng với nhau, ví dụ _`IAnimalFactory & IAnimal`_, _`DogFactory & Dog`_, _`TigerFactory & Tiger`_ 
 
 **Bạn nên luôn luôn chỉ định một factory method bằng từ khóa** _**`abstract`**_ **để các lớp con có thể hoàn thiện nó, đúng không?**
 
+Không 🙂   
+  
+Đôi lúc bạn có thể thích một phương thức factory mặc định nếu _`creator`_ không có các lớp con. Trong trường hợp đó bạn không thể xài keyword _`abstract`_ được.
+
+Tuy nhiên để thấy được sự mãnh mẽ của mẫu thiết kế Factory Method, bạn có thể cần phải làm theo thiết kế được thực hiện ở đây.
+
 **Tôi vẫn thấy rằng mẫu** _**`Factory Method`**_ **vẫn chả có gì khác biệt nhiều so với mẫu** _**`Simple Factory`**_**, đúng chứ hỉ?**
 
+Nếu bạn nhìn vào các lớp con trong ví dụ của cả 2 chương, bạn có thể thấy một vài điểm chung, nhưng bạn không nên quên mục tiêu chinh của mẫu _`Factory Method`_ là cung cấp cho bạn một bộ khung mà các lớp con khác nhau có thể tạo ra các product khác nhau. Còn đối với trường hợp của _`Simple Factory`_, bạn không thể thay đổi các product theo cách tương tự. Bạn có thể nghĩ _`Simple Factory`_ là giao dịch một lần \(one-time deal\), nhưng quan trọng nhất, phần _`"creational"`_ của bạn sẽ không đóng cho việc sửa đổi. Bất cứ khi nào muốn thêm class mới, bạn lại phải thêm _`if...else...`_ hoặc _`switch`_ vào factory class của mẫu _`Simple Factory`_.
 
+In this context, remember the GoF definition \(“The Factory Method pattern lets a class defer instantiation to subclasses.”\). So, in the Simple Factory pattern demonstration, you could omit the abstract class IAnimalFactory and its abstract method CreateAnimal\(\) and instead use only one SimpleFactory class. In that case, you would not need to override the CreateAnimal\(\) method; in addition, it’s considered a good practice to code to an interface/abstract class \(as in this case\). Also, this mechanism provides you with the flexibility to put some common behavior in the abstract class
 
 
 
