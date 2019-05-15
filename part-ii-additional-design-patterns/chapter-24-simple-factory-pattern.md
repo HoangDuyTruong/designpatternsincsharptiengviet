@@ -204,7 +204,7 @@ instantiated"
 
 
 
-**Có thể tạo một static class factory?**
+**Có thể tạo một** _**`factory`**_ **static class ?**
 
 
 
