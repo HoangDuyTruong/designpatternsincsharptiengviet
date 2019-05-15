@@ -200,7 +200,7 @@ instantiated"
 
 
 
-**Có thể nào bỏ qua** _**`ISimpleFactory`**_ **trong ví dụ trước?**
+**Có thể nào bỏ qua** _**`ISimpleFactory`**_ **trong ví dụ trên?**
 
 
 
