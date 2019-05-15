@@ -34,7 +34,7 @@ Có một vài đặc điểm quan trọng dưới đây:
 * Bạn có thể giả định rằng loài nào cũng có thể nói \(speak\) và thích làm gì đó \(action\)
 * Trong client code, bạn sẽ thấy dòng này: `preferredType = simpleFactory.CreateAnimal();`
 * Tôi đã viết code tạo object ở chỗ khác, cụ thể là trong một factory class. Với cách này, bạn sẽ không phải sử dụng từ khóa _`new`_ trong code client
-* Bạn có thể cũng sẽ thấy rằng tôi đã tách code có thể thay đổi từ code ít có khả năng thay đổi. Cơ chế này giúp bạn loại bỏ sự liên kết chặt chẽ trong hệ thống \(làm sao được vậy? Đọc thêm phần Hỏi Đáp\)
+* Bạn có thể cũng sẽ thấy rằng tôi đã tách code có thể thay đổi từ code ít có khả năng thay đổi. Cơ chế này giúp bạn loại bỏ sự liên kết chặt chẽ trong hệ thống \(làm sao được vậy? Đọc thêm phần [Hỏi Đáp](chapter-24-simple-factory-pattern.md#hoi-dap)\)
 
 {% hint style="info" %}
 **Lưu ý:**  
