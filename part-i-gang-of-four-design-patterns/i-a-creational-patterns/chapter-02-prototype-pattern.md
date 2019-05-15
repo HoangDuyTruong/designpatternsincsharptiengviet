@@ -158,7 +158,7 @@ Chú ý: Bạn có thể thấy sự khác biệt về price trên máy của b�
   `For a value type field, it performs a bit-by-bit copy, but for a reference type field, the references are copied but referred objects are not copied. So, the original object and the cloned object both refer to the same object. If you need a deep copy in your application, that can be expensive.`  
   Tham khảo thêm bài viết về shallow copy và deep copy: [http://thachleblog.com/shallow-copy-va-deep-copy/](http://thachleblog.com/shallow-copy-va-deep-copy/)
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/img-2-shallowcopy-deepcopy.png)
 
 **Bạn có thể demo một cách copy bằng constructor?**
 
