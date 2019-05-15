@@ -15,14 +15,14 @@ Trong lập trình hướng đối tượng, một factory là một thứ objec
 
 ## Ví dụ trong thực tế
 
-Trong một nhà hàng ở Nam Ấn Độ, khi bạn order một dĩa Biryani yêu thích, người phục vụ có thể hỏi bạn có muốn Biryani của bạn có thêm hoặc bớt gia vị. Dựa trên sự yêu cầu của bạn, đầu bếp sẽ điều chỉnh cho phù hợp.
+Trong một nhà hàng ở Nam Ấn Độ, khi bạn order một dĩa Biryani yêu thích, người phục vụ có thể hỏi bạn có muốn Biryani của bạn có thêm hoặc bớt gia vị. Dựa trên yêu cầu của bạn, đầu bếp sẽ điều chỉnh cho phù hợp.
 
 ## Ví dụ chuyên ngành
 
 Mẫu Simple Factory rất phổ biến trong các phần mềm ứng dụng, nhưng trước khi đi sâu, bạn nên chú ý những thứ sau đây:
 
 * Mẫu Simple Factory không được xem là mẫu thiết kế tiêu chuẩn trong cuốn sách nổi tiếng GoF, nhưng cách tiếp cận thì khá phổ biến với bất kỳ ứng dụng nào bạn viết nếu bạn muốn tách những đoạn code thay đổi nhiều so với phần code không thay đổi.
-* Mẫu Simple Factory được coi là hình thức đơn giản nhất của mẫu Factory Method \(và mẫu Abstract Factory\). Vì vậy, bạn có thể giả sử rằng bất kỳ ứng dụng nào tuân theo mẫu Factory Method hoặc mẫu Abstract Factory đều bắt nguồn từ khái niệm về các mục tiêu thiết kế mẫu Simple Factory.
+* Mẫu Simple Factory được coi là hình thức đơn giản nhất của mẫu _`Factory Method`_ \(và mẫu _`Abstract Factory`_\). Vì vậy, bạn có thể cho rằng bất kỳ ứng dụng nào tuân theo mẫu _`Factory Method`_ hoặc mẫu _`Abstract Factory`_ đều bắt nguồn từ khái niệm về các mục tiêu thiết kế mẫu _`Simple Factory`_.
 
 Chúng ta sẽ thảo luận về mẫu này bằng một trường hợp phổ biến. Chiến thôi.
 
