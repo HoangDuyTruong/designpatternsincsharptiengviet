@@ -1,10 +1,5 @@
 # Chapter 24: Simple Factory Pattern
 
-{% hint style="warning" %}
-**LƯU Ý:**  
-CHƯƠNG NÀY VẪN CHƯA DỊCH XONG
-{% endhint %}
-
 ## Định nghĩa
 
 Tạo ra các đối tượng mà không để lộ việc tạo ra đối tượng đó như thế nào khi sử dụng
@@ -202,7 +197,7 @@ Không, có 1 vài lý do sau:
   Giả dụ rằng phần code ít thay đổi là code qui định động vật phải speak\(\) và thực hiện vài hành động action\(\). Trong tương lại, nếu có yêu cầu thay đổi trong lúc khởi tạo, bạn chỉ cần thay đổi phương thức CreateAnimal\(\) của class SimpleFactory. Client code sẽ không bị ảnh hưởng bởi những thay đổi đó.
 
 * Bạn không muốn viết quá nhiều đoạn if-else \(hoặc switch\) trong phần client, yep, viết như thế thì gà quá.
-* How you are creating the objects is hidden from the client code. This kind of abstraction promotes security.
+* Làm sao bạn ẩn được các object ở client code? Code ảo ảo vi diệu như vậy sẽ bảo mật tốt hơn đấy.
 
   
 **Có khó khăn gì với mẫu thiết kế này hem?**
