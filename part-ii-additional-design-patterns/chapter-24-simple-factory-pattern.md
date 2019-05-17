@@ -199,9 +199,9 @@ Không, có 1 vài lý do sau:
 * Một trong những nguyên lý chính trong thiết kế hướng đối tượng là chia tách phần dễ thay đổi khỏi các phần còn lại.
 
   Trong trường hợp này thì chỉ có quá trình tạo object là thay đổi.   
-  You can assume that these animals must speak and perform some actions and that part of code does not need to vary inside the client code. So, in the future, if there is any change required in the creation process, you need to change only the CreateAnimal\(\) method of the SimpleFactory class. The client code will be unaffected because of those changes.
+  Giả dụ rằng phần code ít thay đổi là code qui định động vật phải speak\(\) và thực hiện vài hành động action\(\). Trong tương lại, nếu có yêu cầu thay đổi trong lúc khởi tạo, bạn chỉ cần thay đổi phương thức CreateAnimal\(\) của class SimpleFactory. Client code sẽ không bị ảnh hưởng bởi những thay đổi đó.
 
-* You do not want to put lots of if-else blocks \(or switch statements\) inside the client body. That makes your code clumsy.
+* Bạn không muốn viết quá nhiều đoạn if-else \(hoặc switch\) trong phần client, yep, viết như thế thì gà quá.
 * How you are creating the objects is hidden from the client code. This kind of abstraction promotes security.
 
   
@@ -218,9 +218,9 @@ Nếu bạn muốn thêm hoặc xóa bớt vài em animal, bạn cần phải ch
   
 **Có thể nào bỏ qua** _**`ISimpleFactory`**_ **trong ví dụ trên?**
 
-Programming with an abstract class or an interface is always a good practice. This approach can prevent you from lots of changes in the future because any new class can simply implement the interface and settle down in the architecture through polymorphism. But if you solely depend on concrete classes, you need to change your code when you want to integrate a new class in the architecture, and in that case, you will violate the rule that says that your code should be closed for modification.
+Lập trình với một abstract class hay một interface luôn là good practice. Cách này có thể giúp bạn tránh nhiều thay đổi trong tương lại bởi vì khi thêm class mới, đơn giản chỉ cần implement interface là xong thông qua tính đa hình. Nhưng nếu bạn chỉ phụ thuộc vào các concrete class \(là class về một thứ cụ thể, những việc cụ thể\) thì bạn cần thay đổi code khi bạn muốn thêm một class mới vào kiến trúc có sẵn, và trong trường hợp đó, bạn lại vi phạm nguyên lý đóng cho việc sửa đổi.
 
-But yes, in this example, you could put all the stuff directly into the concrete class SimpleFactory. You do not need to defer the instantiation process to the subclass. \(However, for a factory method pattern, it is mandatory. In this context, remember the GoF definition, which says a factory method lets a class defer instantiation to subclasses.\)
+But yes, trong ví dụ này,  bạn có thể đưa tất cả những thứ này trực tiếp vào SimpleFactory concrete class. Bạn không cần trì hoãn việc khởi tạo tới các lớp con. \(Tuy nhiên, đối với mẫu Factory Method thì bắt buộc. Trong ngữ cảnh này, hãy nhớ định nghĩa của GoF: "Factory Method sẽ để các lớp con tự quyết định việc khởi tạo, nói cách khác, nó sẽ để một class trì hoãn việc khởi tạo đến các lớp con"\)
 
   
 **Có thể tạo một** _**`factory`**_ **static class ?**
