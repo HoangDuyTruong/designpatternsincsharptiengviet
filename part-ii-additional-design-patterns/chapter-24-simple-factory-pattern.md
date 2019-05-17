@@ -208,7 +208,7 @@ Nếu bạn muốn thêm hoặc xóa bớt vài em animal, bạn cần phải ch
   
 Đại khái ta có thể tóm lược các nguyên lý của SOLID thành một câu như vầy \(cái này từ người dịch 😅\): 
 
-> Nêu code và phân chia projects, features, classes... thành những thành phần nhỏ hơn, chuyên biệt, cô đọng, dễ mở rộng và không nên phụ thuộc lẫn nhau.
+> Bạn nên code và **phân chia** projects, features, classes... thành những thành phần **nhỏ hơn**, **chuyên biệt**, **cô đọng**, **dễ mở rộng** và **không nên phụ thuộc** lẫn nhau.
 
   
 **Có thể nào bỏ qua** _**`ISimpleFactory`**_ **trong ví dụ trên?**
