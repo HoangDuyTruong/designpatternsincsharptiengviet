@@ -1,7 +1,8 @@
 # Design Patterns in C\# - Tiếng Việt
 
 {% hint style="warning" %}
-TÀI LIỆU NÀY VẪN CHƯA HOÀN THÀNH, CHÚNG TÔI VẪN ĐANG HOÀN THIỆN NÓ
+LƯU Ý  
+TÀI LIỆU NÀY CHƯA HOÀN THÀNH, VẪN ĐANG DỊCH SẤP MẶT
 {% endhint %}
 
 **Github**: [https://github.com/minhhungit/designpatternsincsharptiengviet](https://github.com/minhhungit/designpatternsincsharptiengviet)  
