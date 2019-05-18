@@ -259,8 +259,8 @@ In this context, nhớ rằng theo định nghĩa của GoF \(mẫu Factory Meth
 
 ## Tham khảo thêm
 
-* \*\*\*\*[**Phỏng vấn 2 mẫu thiết kế Abstract Factory và Factory Pattern**](http://nthoai.blogspot.com/2008/06/abstract-factory-and-factory-method.html)\*\*\*\*
-* [https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
-* [https://viblo.asia/p/factory-method-pattern-trong-java-4dbZNoNQlYM](https://viblo.asia/p/factory-method-pattern-trong-java-4dbZNoNQlYM)
-* \*\*\*\*[**Design Pattern từ đơn giản đến phức tạp \(P2** _**Factory method pattern**_**\)**](https://medium.com/edumall/design-pattern-t%E1%BB%AB-%C4%91%C6%A1n-gi%E1%BA%A3n-%C4%91%E1%BA%BFn-ph%E1%BB%A9c-t%E1%BA%A1p-p2-factory-method-pattern-37516e5a668e)\*\*\*\*
+* [Phỏng vấn 2 mẫu thiết kế Abstract Factory và Factory Pattern - nthoai.blogspot.com](http://nthoai.blogspot.com/2008/06/abstract-factory-and-factory-method.html)
+* [Hướng dẫn Java Design Pattern – Factory Method - gpcoder.com](https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/)
+* [Factory method pattern trong java - viblo.asia](https://viblo.asia/p/factory-method-pattern-trong-java-4dbZNoNQlYM)
+* [Design Pattern từ đơn giản đến phức tạp \(P2 _Factory method pattern_\) -  Nguyễn Thành Trung](https://medium.com/edumall/design-pattern-t%E1%BB%AB-%C4%91%C6%A1n-gi%E1%BA%A3n-%C4%91%E1%BA%BFn-ph%E1%BB%A9c-t%E1%BA%A1p-p2-factory-method-pattern-37516e5a668e)
 

@@ -218,7 +218,7 @@ Student name :John, Roll no: 1
 
 ## Tham khảo thêm
 
-* [https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
-* [https://tndhuy.wordpress.com/2011/05/29/prototype/](https://tndhuy.wordpress.com/2011/05/29/prototype/)
-* [https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet](https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet)
+* [Design Pattern: Prototype Pattern - C\# - kipalog.com](https://kipalog.com/posts/Design-Pattern--Prototype-Pattern---C-)
+* [PROTOTYPE - tndhuy.wordpress.com](https://tndhuy.wordpress.com/2011/05/29/prototype/)
+* [Prototype Design Pattern - C\# -  Shailendra Chauhan ](https://www.dotnettricks.com/learn/designpatterns/prototype-design-pattern-dotnet)
 

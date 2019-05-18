@@ -292,6 +292,6 @@ Giờ bạn đã hiểu tại sao dùng `sealed` rồi chứ :\)
 
 Rất có thể nội dung trong chương này - quyển sách này chưa đủ để bạn hiểu về Singleton pattern, tham khảo thêm:
 
-* [http://nthoai.blogspot.com/2008/05/su-dung-singleton-trong-csharp.html](http://nthoai.blogspot.com/2008/05/su-dung-singleton-trong-csharp.html)
-* [https://viblo.asia/p/hoc-singleton-pattern-trong-5-phut-4P856goOKY3](https://viblo.asia/p/hoc-singleton-pattern-trong-5-phut-4P856goOKY3)
+* [Sử dụng Singleton Pattern trong C\# - nthoai.blogspot.com](http://nthoai.blogspot.com/2008/05/su-dung-singleton-trong-csharp.html)
+* [Học Singleton Pattern trong 5 phút - viblo.asia](https://viblo.asia/p/hoc-singleton-pattern-trong-5-phut-4P856goOKY3)
 
