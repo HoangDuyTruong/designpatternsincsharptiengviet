@@ -6,7 +6,7 @@
 
 ## Khái niệm
 
-Một class cụ thể chỉ nên có một instance. Bạn có thể sử dụng instance này bất cứ khi nào bạn cần làm việc với class đó và do đó sẽ tránh việc tạo thêm các đối tượng không cần thiết.
+Một class cụ thể chỉ nên có một instance. Bạn có thể sử dụng instance này bất cứ khi nào bạn cần làm việc với class đó, nó sẽ tránh được việc tạo thêm các đối tượng không cần thiết.
 
 **Giải thích:** Mẫu Singleton được sử dụng khi chúng ta muốn tạo **một và chỉ một** instance của một class xuyên suốt quá trình chạy của ứng dụng.
 
