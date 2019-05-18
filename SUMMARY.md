@@ -4,13 +4,13 @@
 
 ## Part I: Gang of Four Design Patterns
 
-* [I.A: Creational Patterns](part-i-gang-of-four-design-patterns/i-a-creational-patterns/README.md)
+* [I.A: Mẫu Kiến Tạo](part-i-gang-of-four-design-patterns/i-a-creational-patterns/README.md)
   * [Chapter 1: Singleton Pattern](part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-01-singleton-pattern.md)
   * [Chapter 2: Prototype Pattern](part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-02-prototype-pattern.md)
   * [Chapter 3: Builder Pattern](part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-03-builder-pattern.md)
   * [Chapter 4: Factory Method Pattern](part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-04-factory-method-pattern.md)
   * [Chapter 5: Abstract Factory Pattern](part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-05-abstract-factory-pattern.md)
-* [I.B: Structural Patterns](part-i-gang-of-four-design-patterns/i-b-structural-patterns/README.md)
+* [I.B: Mẫu Kiến Trúc](part-i-gang-of-four-design-patterns/i-b-structural-patterns/README.md)
   * [Chapter 6: Proxy Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-06-proxy-pattern.md)
   * [Chapter 7: Decorator Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-07-decorator-pattern.md)
   * [Chapter 8: Adapter Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-08-adapter-pattern.md)
@@ -18,7 +18,7 @@
   * [Chapter 10: Flyweight Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-10-flyweight-pattern.md)
   * [Chapter 11: Composite Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-11-composite-pattern.md)
   * [Chapter 12: Bridge Pattern](part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-12-bridge-pattern.md)
-* [I.C: Behavioral Patterns](part-i-gang-of-four-design-patterns/i-c-behavioral-patterns/README.md)
+* [I.C: Mẫu Hành Vi](part-i-gang-of-four-design-patterns/i-c-behavioral-patterns/README.md)
   * [Chapter 13: Visitor Pattern](part-i-gang-of-four-design-patterns/i-c-behavioral-patterns/chapter-13-visitor-pattern.md)
   * [Chapter 14: Observer Pattern](part-i-gang-of-four-design-patterns/i-c-behavioral-patterns/chapter-14-observer-pattern.md)
   * [Chapter 15: Strategy \(Policy\) Pattern](part-i-gang-of-four-design-patterns/i-c-behavioral-patterns/chapter-15-strategy-policy-pattern.md)
