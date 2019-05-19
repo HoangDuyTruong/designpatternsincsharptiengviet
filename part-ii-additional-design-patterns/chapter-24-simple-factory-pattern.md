@@ -227,6 +227,5 @@ Bạn có thể, nhưng phải nhớ các hạn chế liên quan đến _`static
 
 ## Tham khảo thêm
 
-* [Design Patterns: The Simple Factory Pattern - appstechviet.wordpress.com](https://appstechviet.wordpress.com/2015/08/03/design-patterns-the-simple-factory-pattern/)
 * [Factory Design Pattern - swiftyvn.com](http://swiftyvn.com/?p=1822)
 
