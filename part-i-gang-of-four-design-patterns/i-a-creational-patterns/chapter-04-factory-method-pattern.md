@@ -235,7 +235,7 @@ Chú ý rằng trong mỗi trường hợp bạn sẽ thấy cảnh bảo như s
 
 **Tại sao tách phương thức CreateAnimal\(\) ra khỏi client \(Main.cs\)?**
 
-Việc này có mục đích đó. Tôi muốn các lớp con tạo ra các đối tượng chuyên biệt. If you look carefully, you will also find that only this “creational part” varies across the products. I discussed this in detail in the “Q&A Session” section of [Chapter 24](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md)
+Việc này có mục đích đó. Tôi muốn các lớp con tạo ra các đối tượng chuyên biệt. Nếu bạn để ý kỹ thì bạn cũng sẽ thấy rằng chỉ mỗi phần “creational” là khác nhau giữ các product. Tôi đã thảo luận chi tiết trong phần [Hỏi Đáp](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md#hoi-dap) của chương [Chapter 24](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md)
 
 **Lợi ích của việc sử dụng mẫu Factory Method?**
 
@@ -246,9 +246,9 @@ Việc này có mục đích đó. Tôi muốn các lớp con tạo ra các đ�
 
 Humm, nếu bạn cần làm việc với nhiều kiểu đối tượng khác nhau thì hiệu năng chung của hệ thống có thể bị ảnh hưởng.
 
-**Tôi thấy rằng mẫu Factory Method này đang hỗ trợ 2 parallel hierarchies \(cây phân cấp song song\), cách hiểu này có đúng không?**
+**Tôi thấy rằng mẫu Factory Method này đang hỗ trợ 2 parallel hierarchies \(cây phân cấp song song - tương ứng\), cách hiểu này có đúng không?**
 
-Đúng đấy, nhìn vào class diagram dễ dàng thấy mẫu này hỗ trợ 2 cây phân cấp song song.
+Đúng đấy, nhìn vào class diagram dễ dàng thấy mẫu này hỗ trợ 2 cây phân cấp song song và các node tương ứng với nhau.
 
 ![](../../.gitbook/assets/img-4-4.png)
 
