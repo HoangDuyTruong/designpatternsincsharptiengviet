@@ -260,7 +260,7 @@ Không 🙂
   
 Đôi lúc bạn có thể thích một phương thức factory mặc định nếu _`creator`_ không có các lớp con. Trong trường hợp đó bạn không thể xài keyword _`abstract`_ được.
 
-Tuy nhiên để thấy được sự mạnh mẽ của mẫu thiết kế Factory Method, bạn có thể cần phải làm theo thiết kế được thực hiện ở đây.
+Tuy nhiên để thấy được sự mạnh mẽ của mẫu thiết kế Factory Method, bạn có thể cần phải làm theo thiết kế được trình bày.
 
 **Tôi vẫn thấy rằng mẫu** _**`Factory Method`**_ **vẫn chả có gì khác biệt nhiều so với mẫu** _**`Simple Factory`**_**, đúng chứ hỉ?**
 
