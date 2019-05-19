@@ -222,17 +222,17 @@ Tiger trong rap xiec' dien~ xiec'.
 
 ## Hỏi Đáp
 
-**I am seeing that both the IDog and ITiger interfaces are containing methods that have the same names. For example, both interfaces contain the methods Speak\(\) and Action\(\). Is that mandatory?**
+**Em thấy là mấy cái interface IDog và ITiger đều có các method cùng tên, ví dụ, cả 2 interface đều có phương thức Speak\(\) và Action\(\). Có cần thiết phải vậy không?**
 
+\[...\]
 
+**Có khó khăn gì khi xài mẫu thiết kế này hem?**
 
-**What are the challenges of using an abstract factory like this?**
+\[...\]
 
+**Làm sao để phân biệt mẫu Simple Factory với mẫu Factory Method hoặc mẫu Abstract Factory?**
 
-
-**How can you distinguish a Simple Factory pattern from a Factory Method pattern or an Abstract Factory pattern?**
-
-
+\[...\]
 
 ## Thao khảo thêm
 
