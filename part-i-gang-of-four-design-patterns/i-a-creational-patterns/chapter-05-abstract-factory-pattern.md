@@ -222,17 +222,82 @@ Tiger trong rap xiec' dien~ xiec'.
 
 ## Hỏi Đáp
 
-**Em thấy là mấy cái interface IDog và ITiger đều có các method cùng tên, ví dụ, cả 2 interface đều có phương thức Speak\(\) và Action\(\). Có cần thiết phải vậy không?**
+**Em thấy là mấy cái interface IDog và ITiger đều có các method cùng tên, cụ thể, cả 2 interface đều có phương thức Speak\(\) và Action\(\). Có cần thiết phải vậy không?**
 
-\[...\]
+Câu trả lời là không, bạn có thể sử dụng những tên khác cho các phương thức của bạn, cũng như số lượng các phương thức có thể khác nhau giữa các interface.   
+Cũng nói thêm, ở chương này tôi sẽ xài tiếp các ví dụ từ Chương 24 - Simple Factory và Chương 4 - Factory Method, đó là lý do tôi vẫn giữ phương thức Speak\(\) và Action\(\).
 
 **Có khó khăn gì khi xài mẫu thiết kế này hem?**
 
-\[...\]
+Bất kỳ thay đổi nào trong abstract factory cũng sẽ buộc bạn propagate \(truyền ra, phát ra\) sự thay đổi đến các concrete factory. Nếu bạn tuân theo triết lý "Program to an interface, not to an implementation", bạn cần chuẩn bị cho việc này. Đây là một trong những nguyên tắc chính mà các developer nên nhớ. Trong hầu hết trường hợp, các developer sẽ không muốn thay đổi các abstract factory của họ.
+
+Ngoài ra, kiến trúc tổng thể có thể sẽ phức tạp, khó nắm bắt, và việc debug có thể trở nên khó khăn trong một vài tình huống.
+
+> **Note:**   
+> Các bác có thể tìm hiểu thêm về nguyên lý _"Program to an interface, not to an implementation"_ ở đây:
+>
+> * [https://www.codehub.vn/Hieu-The-Nao-Ve-Nguyen-Ly-Programming-to-an-Interface](https://www.codehub.vn/Hieu-The-Nao-Ve-Nguyen-Ly-Programming-to-an-Interface) 
+> * [https://viblo.asia/p/cac-nguyen-tac-trong-design-pattern-pDljMboWGVZn](https://viblo.asia/p/cac-nguyen-tac-trong-design-pattern-pDljMboWGVZn)
 
 **Làm sao để phân biệt mẫu Simple Factory với mẫu Factory Method hoặc mẫu Abstract Factory?**
 
-\[...\]
+Tôi đã thảo luận về sự khác biệt giữa mẫu Simple Factory và mẫu Factory Method trong phần [Hỏi Đáp](chapter-04-factory-method-pattern.md#hoi-and-dap) của [Chương 4](chapter-04-factory-method-pattern.md). Nhưng hãy cứ ôn lại cả 3 factory trong sơ đồ dưới đây:
+
+Đầu tiên là mẫu Simple Factory:
+
+```csharp
+IAnimal preferredType=null;
+ISimpleFactory simpleFactory = new SimpleFactory();
+preferredType = simpleFactory.CreateAnimal();
+```
+
+![H&#xEC;nh  5-4. Simple Factory pattern](../../.gitbook/assets/img-5-4.png)
+
+Tiếp theo là mẫu Factory Method:
+
+```csharp
+// Creating a Tiger Factory
+IAnimalFactory tigerFactory =new TigerFactory();
+// Creating a tiger using the Factory Method
+IAnimal aTiger = tigerFactory.CreateAnimal();
+
+.......
+
+// Creating a DogFactory
+IAnimalFactory dogFactory = new DogFactory();
+// Creating a dog using the Factory Method
+IAnimal aDog = dogFactory.CreateAnimal();
+```
+
+![H&#xEC;nh 5-5. Factory Method pattern](../../.gitbook/assets/img-5-5.png)
+
+Và cuối cùng là mẫu Abstract Factory:
+
+```csharp
+// Making a wild dog through WildAnimalFactory
+IAnimalFactory wildAnimalFactory = new WildAnimalFactory();
+IDog wildDog = wildAnimalFactory.GetDog();
+
+.....
+
+// Making a wild tiger through WildAnimalFactory
+ITiger wildTiger = wildAnimalFactory.GetTiger();
+
+.....
+
+// Making a pet dog through PetAnimalFactory
+IAnimalFactory petAnimalFactory = new PetAnimalFactory();
+IDog petDog = petAnimalFactory.GetDog();
+
+.....
+
+// Making a pet tiger through PetAnimalFactory
+ITiger petTiger = petAnimalFactory.GetTiger();
+```
+
+![H&#xEC;nh 5-6. Abstract Factory pattern](../../.gitbook/assets/img-5-6.png)
+
+
 
 ## Thao khảo thêm
 
