@@ -220,13 +220,14 @@ Tiger trong rap xiec' dien~ xiec'.
 **Em thấy là mấy cái interface IDog và ITiger đều có các method cùng tên, cụ thể, cả 2 interface đều có phương thức Speak\(\) và Action\(\). Có cần thiết phải vậy không?**
 
 Câu trả lời là không, bạn có thể sử dụng những tên khác cho các phương thức của bạn, cũng như số lượng các phương thức có thể khác nhau giữa các interface.   
-Cũng nói thêm, ở chương này tôi sẽ xài tiếp các ví dụ từ Chương 24 - Simple Factory và Chương 4 - Factory Method, đó là lý do tôi vẫn giữ phương thức Speak\(\) và Action\(\).
+Cũng nói thêm, ở chương này tôi sẽ xài tiếp các ví dụ từ Chương 24 - Simple Factory và Chương 4 - Factory Method, đó là lý do tôi vẫn giữ phương thức Speak\(\) và Action\(\).  
+
 
 **Có khó khăn gì khi xài mẫu thiết kế này hem?**
 
-Bất kỳ thay đổi nào trong abstract factory cũng sẽ buộc bạn propagate \(truyền ra, phát ra\) sự thay đổi đến các concrete factory. Nếu bạn tuân theo triết lý "Program to an interface, not to an implementation", bạn cần chuẩn bị cho việc này. Đây là một trong những nguyên tắc chính mà các developer nên nhớ. Trong hầu hết trường hợp, các developer sẽ không muốn thay đổi các abstract factory của họ.
+Bất kỳ thay đổi nào trong abstract factory cũng sẽ buộc bạn propagate \(truyền ra, phát ra\) sự thay đổi đến các concrete factory. Nếu bạn tuân theo triết lý _"Program to an interface, not to an implementation"_, bạn cần chuẩn bị cho việc này. Đây là một trong những nguyên tắc chính mà các developer nên nhớ. Trong hầu hết trường hợp, các developer sẽ không muốn thay đổi các abstract factory của họ.
 
-Ngoài ra, kiến trúc tổng thể có thể sẽ phức tạp, khó nắm bắt, và việc debug có thể trở nên khó khăn trong một vài tình huống.
+Ngoài ra, kiến trúc tổng thể có thể sẽ phức tạp, khó nắm bắt, và việc debug có thể trở nên khó khăn trong một vài trường hợp.
 
 > **Note:**   
 > Các bác có thể tìm hiểu thêm về nguyên lý _"Program to an interface, not to an implementation"_ ở đây:
@@ -234,6 +235,7 @@ Ngoài ra, kiến trúc tổng thể có thể sẽ phức tạp, khó nắm b�
 > * [https://www.codehub.vn/Hieu-The-Nao-Ve-Nguyen-Ly-Programming-to-an-Interface](https://www.codehub.vn/Hieu-The-Nao-Ve-Nguyen-Ly-Programming-to-an-Interface) 
 > * [https://viblo.asia/p/cac-nguyen-tac-trong-design-pattern-pDljMboWGVZn](https://viblo.asia/p/cac-nguyen-tac-trong-design-pattern-pDljMboWGVZn)
 
+  
 **Làm sao để phân biệt mẫu Simple Factory với mẫu Factory Method hoặc mẫu Abstract Factory?**
 
 Tôi đã thảo luận về sự khác biệt giữa mẫu Simple Factory và mẫu Factory Method trong phần [Hỏi Đáp](chapter-04-factory-method-pattern.md#hoi-and-dap) của [Chương 4](chapter-04-factory-method-pattern.md). Nhưng hãy cứ ôn lại cả 3 factory trong sơ đồ dưới đây:
@@ -305,11 +307,11 @@ ITiger petTiger = petAnimalFactory.GetTiger();
 
 Nói ngắn gọn, với mẫu Simple Factory, bạn có thể tách rời đoạn code hay thay đổi khỏi phần còn lại \(cơ bản là tách riêng khỏi code Client\). Việc này giúp bạn quản lý code dễ dàng hơn. Một ưu điểm của việc này là Client sẽ không hay biết làm cách nào mà các object được tạo ra. Do đó, code sẽ bảo mật hơn và có vẻ pro hơn, ảo ảo hơn 😅 
 
-Tuy nhiên, cách này vi phạm nguyên lý open-close. Bạn có thể khắc phục bằng cách sử dụng mẫu Factory Method, nó cho phép các lớp con tự quyết định việc khởi tạo như thế nào. Nói một cách đơn giản, bạn ủy thác việc tạo object cho các lớp con, là những class sử dụng factory method để tạo ra object. 
+Tuy có vẻ pro là vậy, cách này lại vi phạm nguyên lý open-close. Bạn có thể khắc phục bằng cách sử dụng mẫu Factory Method, nó cho phép các lớp con tự quyết định việc khởi tạo như thế nào. Nói một cách đơn giản, bạn ủy thác việc tạo object cho các lớp con - là những class sử dụng factory method để tạo ra object. 
 
 Abstract factory chỉ đơn giản là _`factory of factories`_. Nó tạo ra một tập các object liên quan với nhau, nhưng nó không phụ thuộc vào các concrete class.
 
-Cuối cùng, tôi đã cố giữ các ví dụ thật đơn giản. Một factory method khuyến khích sự kế thừa, và các lớp con của nó cần phải được hiện thực \(implemenent\) factory method để tạo object. Nhưng trong vài trường hợp, bạn có thể thấy rõ rằng mẫu Abstract Factory có thể thúc đẩy việc kết hợp các object bằng cách tạo ra các object liên quan nhau bằng việc sử dụng các phương thức đã lộ ra \(exposed\) trong một factory interface. 
+Một factory method khuyến khích sự kế thừa, và các lớp con của nó cần phải implemenent _`factory method`_ để tạo object. Nhưng trong vài trường hợp, bạn có thể thấy rõ rằng mẫu Abstract Factory có thể thúc đẩy việc kết hợp các object lại với nhau bằng cách tạo ra các object liên quan nhau bằng việc sử dụng các phương thức đã lộ ra \(exposed\) trong một factory interface. 
 
 Các factory này đề cao tính "loose coupling" \(liên kết lỏng lẻo\), bằng cách giảm sự phụ thuộc vào các concrete class.
 
