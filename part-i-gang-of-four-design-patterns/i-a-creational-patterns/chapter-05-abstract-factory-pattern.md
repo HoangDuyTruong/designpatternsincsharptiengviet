@@ -243,7 +243,7 @@ Tiger trong rap xiec' dien~ xiec'.
 
 ## Tổng Kết
 
-Nói ngắn gọn, với mẫu Simple Factory, bạn có thể tách rời đoạn code hay thay đổi khỏi phần còn lại \(cơ bản là tách riêng khỏi code Client\). Việc này giúp bạn quản lý code dễ dàng hơn. Một ưu điểm của việc này là Client sẽ không hay biết làm cách cách nào các object được tạo. Do đó, code sẽ bảo mật hơn và có vẻ pro hơn, ảo ảo hơn 😅 
+Nói ngắn gọn, với mẫu Simple Factory, bạn có thể tách rời đoạn code hay thay đổi khỏi phần còn lại \(cơ bản là tách riêng khỏi code Client\). Việc này giúp bạn quản lý code dễ dàng hơn. Một ưu điểm của việc này là Client sẽ không hay biết làm cách nào mà các object được tạo ra. Do đó, code sẽ bảo mật hơn và có vẻ pro hơn, ảo ảo hơn 😅 
 
 Tuy nhiên, cách này vi phạm nguyên lý open-close. Bạn có thể khắc phục bằng cách sử dụng mẫu Factory Method, nó cho phép các lớp con tự quyết định việc khởi tạo như thế nào. Nói một cách đơn giản, bạn ủy thác việc tạo object cho các lớp con, là những class sử dụng factory method để tạo ra object. 
 
