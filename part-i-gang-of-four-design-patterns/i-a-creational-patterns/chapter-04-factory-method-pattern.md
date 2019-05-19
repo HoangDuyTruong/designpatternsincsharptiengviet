@@ -150,7 +150,7 @@ Dogs prefer barking...
 
 Trong lần sửa đổi này, chúng ta sẽ làm cho đoạn code tăng tính linh hoạt. Chú ý là, class _`IAnimalFactory`_ là một lớp trừu tượng \(abstract\), do đó bạn có thể tận dụng mọi lợi thế của nó. Giả sử rằng bạn muốn một lớp con tuân theo qui tắc mà lớp cha \( hoặc _`base class`_ - lớp cơ sở \) đã qui định. Tôi đã thử code cho tình huống như vậy, dưới đây là những ý chính:
 
-* Chỉ _`AnimalFactory`_ được sửa đổi, nói cách khác, tôi đang đề cập đến một phương thức mới gọi là _`MakeAnimal()`_ .
+* Chỉ _`IAnimalFactory`_ bị sửa đổi, ở đây tôi viết thêm một phương thức mới gọi là _`MakeAnimal()`_ .
 
   ```csharp
   //Modifying the IAnimalFactory class.
@@ -209,6 +209,8 @@ Trong lần sửa đổi này, chúng ta sẽ làm cho đoạn code tăng tính 
       }
   }
   ```
+
+  Đấy, thay vì xài _`CreateAnimal()`_ thì giờ ta xài _`MakeAnimal()`_
 
 ### Kết quả sau khi sửa đổi
 
