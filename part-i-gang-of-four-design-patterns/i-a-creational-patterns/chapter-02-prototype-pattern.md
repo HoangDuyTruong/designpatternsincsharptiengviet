@@ -47,6 +47,7 @@ namespace PrototypePattern
     {
         public string ModelName { get; set; }
         public int Price { get; set; }
+        
         public static int SetPrice()
         {
             int price = 0;
@@ -55,6 +56,7 @@ namespace PrototypePattern
             price = p;
             return price;
         }
+        
         public abstract BasicCar Clone();
     }
 }
@@ -69,6 +71,7 @@ namespace PrototypePattern
         {
             ModelName = m;
         }
+        
         public override BasicCar Clone()
         {
             return (Nano)this.MemberwiseClone();//shallow Clone
@@ -86,6 +89,7 @@ namespace PrototypePattern
         {
             ModelName = m;
         }
+        
         public override BasicCar Clone()
         {
             return (Ford)this.MemberwiseClone();
@@ -102,6 +106,7 @@ namespace PrototypePattern
         static void Main(string[] args)
         {
             Console.WriteLine("***Prototype Pattern Demo***\n");
+            
             //Base or Original Copy
             BasicCar nano_base = new Nano("Green Nano") { Price = 100000 };
             BasicCar ford_base = new Ford("Ford Yellow") { Price = 500000 };
@@ -167,18 +172,21 @@ class Student
 {
     int rollNo;
     string name;
+    
     //Instance Constructor
     public Student(int rollNo, string name)
     {
         this.rollNo = rollNo;
         this.name = name;
     }
+    
     //Copy Constructor
     public Student(Student student)
     {
         this.name = student.name;
         this.rollNo = student.rollNo;
     }
+    
     public void DisplayDetails()
     {
         Console.WriteLine("Student name :{0}, Roll no: {1}",
@@ -192,12 +200,16 @@ class Program
     {
         Console.WriteLine("***A simple copy constructor demo***\n");
         Student student1 = new Student(1, "John");
+        
         Console.WriteLine("The details of student1 is as follows:");
         student1.DisplayDetails();
+        
         Console.WriteLine("\nCopying student1 to student2 now");
         Student student2 = new Student(student1);
+        
         Console.WriteLine("The details of student2 is as follows:");
         student2.DisplayDetails();
+        
         Console.ReadKey();
     }
 }

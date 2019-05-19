@@ -56,6 +56,7 @@ namespace FactoryMethodPattern
         {
             Console.WriteLine("Dog says: Bow-Wow.");
         }
+        
         public void Action()
         {
             Console.WriteLine("Dogs prefer barking...\n");
@@ -68,6 +69,7 @@ namespace FactoryMethodPattern
         {
             Console.WriteLine("Tiger says: Halum.");
         }
+        
         public void Action()
         {
             Console.WriteLine("Tigers prefer hunting...\n");
@@ -107,18 +109,25 @@ namespace FactoryMethodPattern
         static void Main(string[] args)
         {
             Console.WriteLine("***Factory Pattern Demo***\n");
+            
             // Creating a Tiger Factory
             IAnimalFactory tigerFactory = new TigerFactory();
+            
             // Creating a tiger using the Factory Method
             IAnimal aTiger = tigerFactory.CreateAnimal();
+            
             aTiger.Speak();
             aTiger.Action();
+            
             // Creating a DogFactory
             IAnimalFactory dogFactory = new DogFactory();
+            
             // Creating a dog using the Factory Method
             IAnimal aDog = dogFactory.CreateAnimal();
+            
             aDog.Speak();
             aDog.Action();
+            
             Console.ReadKey();
         }
     }

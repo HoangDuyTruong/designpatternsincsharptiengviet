@@ -78,6 +78,7 @@ namespace SingletonPatternEx
             numberOfInstances++;
             Console.WriteLine("Number of instances ={0}", numberOfInstances);
         }
+        
         public static Singleton Instance
         {
             get
@@ -93,12 +94,16 @@ namespace SingletonPatternEx
         static void Main(string[] args)
         {
             Console.WriteLine("***Singleton Pattern Demo***\n");
+            
             //Console.WriteLine(Singleton.MyInt);
             // Private Constructor.So,we cannot use 'new' keyword.
+            
             Console.WriteLine("Trying to create instance s1.");
             Singleton s1 = Singleton.Instance;
+            
             Console.WriteLine("Trying to create instance s2.");
             Singleton s2 = Singleton.Instance;
+            
             if (s1 == s2)
             {
                 Console.WriteLine("Only one instance exists.");
@@ -107,6 +112,7 @@ namespace SingletonPatternEx
             {
                 Console.WriteLine("Different instances exist.");
             }
+            
             Console.Read();
         }
     }
@@ -203,6 +209,7 @@ public sealed class Singleton
     private static volatile Singleton instance;
     private static object lockObject = new Object();
     private Singleton() { }
+    
     public static Singleton Instance
     {
         get
@@ -256,6 +263,7 @@ public class Singleton
 {
     private static readonly Singleton instance = new Singleton();
     private static int numberOfInstances = 0;
+    
     //Private constructor is used to prevent
     //creation of instances with 'new' keyword outside this class
     //protected Singleton()
@@ -266,6 +274,7 @@ public class Singleton
         numberOfInstances++;
         Console.WriteLine("Number of instances ={0}", numberOfInstances);
     }
+    
     public static Singleton Instance
     {
         get
@@ -274,6 +283,7 @@ public class Singleton
             return instance;
         }
     }
+    
     //The keyword "sealed" can guard this scenario.
     public class NestedDerived : Singleton { }
 }
