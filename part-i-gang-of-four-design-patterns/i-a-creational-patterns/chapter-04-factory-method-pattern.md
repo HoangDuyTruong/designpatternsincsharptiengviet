@@ -241,7 +241,7 @@ Humm, nếu bạn cần làm việc với nhiều kiểu đối tượng khác n
 
 ![](../../.gitbook/assets/img-4-4.png)
 
-Trong ví dụ này _`IAnimalFactory, DogFactory, and TigerFactory`_ được đặt trong một cây phân cấp, còn _`IAnimal, Dog, and Tiger`_ nằm trong cây phân cấp khác, nên bạn có thể thấy rằng creation và các creation/product của nó là 2 cây song song, các node của nó cũng tương ứng với nhau, ví dụ _`IAnimalFactory & IAnimal`_, _`DogFactory & Dog`_, _`TigerFactory & Tiger`_ 
+Trong ví dụ này _`IAnimalFactory, DogFactory, and TigerFactory`_ được đặt trong một cây phân cấp, còn _`IAnimal, Dog, and Tiger`_ nằm trong cây phân cấp khác, nên bạn có thể thấy rằng những creator và các creation/product của nó là 2 cây song song, các node của nó cũng tương ứng với nhau, ví dụ _`IAnimalFactory & IAnimal`_, _`DogFactory & Dog`_, _`TigerFactory & Tiger`_ 
 
 **Bạn nên luôn luôn chỉ định một factory method bằng từ khóa** _**`abstract`**_ **để các lớp con có thể hoàn thiện nó, đúng không?**
 
@@ -249,11 +249,11 @@ Không 🙂
   
 Đôi lúc bạn có thể thích một phương thức factory mặc định nếu _`creator`_ không có các lớp con. Trong trường hợp đó bạn không thể xài keyword _`abstract`_ được.
 
-Tuy nhiên để thấy được sự mãnh mẽ của mẫu thiết kế Factory Method, bạn có thể cần phải làm theo thiết kế được thực hiện ở đây.
+Tuy nhiên để thấy được sự mạnh mẽ của mẫu thiết kế Factory Method, bạn có thể cần phải làm theo thiết kế được thực hiện ở đây.
 
 **Tôi vẫn thấy rằng mẫu** _**`Factory Method`**_ **vẫn chả có gì khác biệt nhiều so với mẫu** _**`Simple Factory`**_**, đúng chứ hỉ?**
 
-Nếu bạn nhìn vào các lớp con trong ví dụ của cả 2 chương, bạn có thể thấy một vài điểm chung, nhưng bạn không nên quên mục tiêu chinh của mẫu _`Factory Method`_ là cung cấp cho bạn một bộ khung mà các lớp con khác nhau có thể tạo ra các product khác nhau. Còn đối với trường hợp của _`Simple Factory`_, bạn không thể thay đổi các product theo cách tương tự. Bạn có thể nghĩ _`Simple Factory`_ là giao dịch một lần \(one-time deal\), nhưng quan trọng nhất, phần _`"creational"`_ của bạn sẽ không đóng cho việc sửa đổi. Bất cứ khi nào muốn thêm class mới, bạn lại phải thêm _`if...else...`_ hoặc _`switch`_ vào factory class của mẫu _`Simple Factory`_.
+Nếu bạn nhìn vào các lớp con trong ví dụ của cả 2 chương, bạn có thể thấy một vài điểm chung, nhưng bạn không nên quên mục tiêu chính của mẫu _`Factory Method`_ là cung cấp cho bạn một bộ khung mà các lớp con khác nhau có thể tạo ra các product khác nhau. Còn đối với trường hợp của _`Simple Factory`_, bạn không thể thay đổi các product theo cách tương tự. Bạn có thể nghĩ _`Simple Factory`_ là giao dịch một lần \(one-time deal\), nhưng quan trọng nhất, phần _`"creational"`_ của bạn sẽ không đóng cho việc sửa đổi. Bất cứ khi nào muốn thêm class mới, bạn lại phải thêm _`if...else...`_ hoặc _`switch`_ vào factory class của mẫu _`Simple Factory`_.
 
 In this context, nhớ rằng theo định nghĩa của GoF \(mẫu Factory Method cho phép một class trì hoãn việc khởi tạo và để các lớp con tự quyết định\). Vì vậy, trong phần demo của mẫu Simple Factory, bạn có thể bỏ qua abstract class IAnimalFactory và phương thức abstract của nó CreateAnimal\(\) và thay vào đó chỉ sử dụng class SimpleFactory. Trong trường hợp đó, bạn sẽ không cần override phương thức CreateAnimal\(\); Ngoài ra, nó được xem là good practice để code một interface/abstract class \(như trong trường hợp này\). Cơ chế này cũng cho bạn sự linh hoạt để đưa một vài hành vi phổ biến \(common behavior\) vào abstract class.
 
