@@ -234,6 +234,13 @@ Tiger trong rap xiec' dien~ xiec'.
 
 
 
+## Thao khảo thêm
+
+* [Tìm hiểu về Abstract Factory Pattern và các ứng dụng? - vi.fitwp.com](https://vi.fitwp.com/abstract-factory-pattern/)
+* [Phỏng vấn 2 mẫu thiết kế Abstract Factory và Factory Pattern - nthoai.blogspot.com](http://nthoai.blogspot.com/2008/06/abstract-factory-and-factory-method.html)
+* [Abstract Factory Pattern in C\# - viblo.asia](https://viblo.asia/p/abstract-factory-pattern-in-c-1VgZv9kpKAw)
+* [Abstract Factory - nguyenanhtuanweb.wordpress.com](https://nguyenanhtuanweb.wordpress.com/2018/05/29/abstract-factory/)
+
 ## Tổng Kết
 
 Nói ngắn gọn, với mẫu Simple Factory, bạn có thể tách rời đoạn code hay thay đổi khỏi phần còn lại \(cơ bản là tách riêng khỏi code Client\). Việc này giúp bạn quản lý code dễ dàng hơn. Một ưu điểm của việc này là Client sẽ không hay biết làm cách cách nào các object được tạo. Do đó, code sẽ bảo mật hơn và có vẻ pro hơn, ảo ảo hơn 😅 
