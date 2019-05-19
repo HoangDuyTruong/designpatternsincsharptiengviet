@@ -1,13 +1,8 @@
 # Chapter 5: Abstract Factory Pattern
 
-{% hint style="warning" %}
-**CHÚ Ý**  
-CHƯƠNG NÀY VẪN ĐANG ĐƯỢC DỊCH
-{% endhint %}
-
 ## GoF Definition
 
-Cung cấp một interface để tạo ra tập hợp các object có liên quan hoặc phụ thuộc lẫn nhau mà không chỉ rõ các lớp cụ thể của chúng \(concrete classes\).
+Cung cấp một interface để tạo ra các tập hợp những object có liên quan hoặc phụ thuộc lẫn nhau mà không chỉ rõ các lớp cụ thể của chúng \(concrete classes\).
 
 {% hint style="info" %}
 Note: Để hiểu rõ mẫu thiết kế này, tôi đề nghị bạn nên tham khảo [Chương 24](../../part-ii-additional-design-patterns/chapter-24-simple-factory-pattern.md) để tìm hiểu mẫu Simple Factory trước. Tiếp theo là quay lại [Chương 4](chapter-04-factory-method-pattern.md) để tìm hiểu về Factory Method.  
@@ -28,7 +23,7 @@ Giả sử bạn đang trang trí phòng của mình với hai loại bàn khác
 
 ADO.NET đã implement một  concept tương tự để thiết lập một connection \(kết nối\) đến một database.
 
-Trong mẫu Factory Method, bạn có 2 factory, một để tạo ra những em Dog, cái còn lại tạo ra mấy em Tiger. Ok, nhưng giờ giả sử bạn muốn phân loại mấy em Dog & Tiger đó thêm, ví dụ như bạn muốn có chó nhà hoặc chó hoang, để đáp ứng nhu cầu đó, bạn sẽ thêm 2 factory nữa, WildAnimalFactory \(cho thú hoang dã\) và PetAnimalFactory \(cho thú nhà - thú cưng\).
+Trong mẫu Factory Method, bạn có 2 factory, một để tạo ra những em Dog, cái còn lại tạo ra mấy em Tiger. Ok, nhưng bây giờ giả sử bạn muốn phân loại chi tiết mấy em Dog/Tiger đó hơn, ví dụ như bạn muốn có Chó nhà hoặc Chó hoang, để đáp ứng nhu cầu đó, bạn sẽ thêm 2 factory nữa, WildAnimalFactory \(cho động vật hoang dã\) và PetAnimalFactory \(cho thú nhà - thú cưng\).
 
 ## Ví dụ minh họa và giải thích
 
@@ -36,7 +31,7 @@ Wikipedia mô tả một structure điển hình của mẫu này, tương tự 
 
 ![](../../.gitbook/assets/img-5-1.png)
 
-Chúng ta sẽ dựa theo structure này để viết code. Bạn sẽ được thấy quá trình xây dựng lên cả động vật hoang dã và mấy em thú cưng. 
+Chúng ta sẽ dựa theo structure này để viết code. Bạn sẽ thấy quá trình tạo ra cả động vật hoang dã và mấy em thú cưng. 
 
 Ví dụ này có 2 concrete factory: WildAnimalFactory và PetAnimalFactory. Bạn có lẽ sẽ đoán được rằng chúng có trách nhiệm tạo ra concrete products của Dog and Tiger. WildAnimalFactory thì tạo ra động vật hoang dã \(wild dogs và wild tigers\), còn PetAnimalFactory sẽ tạo ra mấy em thú cưng \(pet dogs và pet tigers\). Tóm tắt lại cho dễ hình dung như vầy:
 
