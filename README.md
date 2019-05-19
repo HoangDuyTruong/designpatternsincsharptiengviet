@@ -42,6 +42,17 @@ Do sự khác biệt về ngôn ngữ và những đặc thù của tiếng Vi�
 * Đối với những từ hoặc cụm từ hoàn toàn không có từ ngữ tương đương trong tiếng Việt, hãy thông báo để chúng ta cùng thảo luận.
 * Không nhất thiết phải dịch 1:1. Đôi khi chúng ta nên thêm hoặc bớt vài từ hoặc thậm chí là cả một câu để bản dịch được tự nhiên hơn, miễn là truyền tải được đúng và đủ ý.
 
+## Tiến Trình
+
+Các chương đã dịch xong
+
+* [Chapter 1: Singleton Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-01-singleton-pattern) - [Jin](https://github.com/minhhungit)
+* [Chapter 2: Prototype Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-02-prototype-pattern) - [Jin](https://github.com/minhhungit)
+* [Chapter 4: Factory Method Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-04-factory-method-pattern) - [Jin](https://github.com/minhhungit)
+* [Chapter 24: Simple Factory Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-ii-additional-design-patterns/chapter-24-simple-factory-pattern) - [Jin](https://github.com/minhhungit)
+
+Chi tiết hơn các bác có thể check [tại đây](https://github.com/minhhungit/designpatternsincsharptiengviet/issues/1#issue-442682612)
+
 ## Thành viên
 
 > Đang cập nhật...
