@@ -112,7 +112,7 @@ ConcreteSubject.DoSomeWork()
 
 **Có các loại proxy nào?**
 
-
+\[...\]
 
 **Tôi có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đây, đúng không:**
 
@@ -142,19 +142,19 @@ public class Proxy : Subject
 
 **But with this lazy instantiation process, you may create unnecessary objects in a multithreaded application. Is this understanding correct?**
 
-
+\[...\]
 
 **Can you give an example of a remote proxy?**
 
-
+\[...\]
 
 **When can you use a virtual proxy?**
 
-
+\[...\]
 
 **When can you use a protection proxy?**
 
-
+\[...\]
 
 Dưới đây là code đã chỉnh sửa:
 
@@ -260,7 +260,7 @@ Sorry Robin, you do not have access.
 
 **It looks like proxies act like decorators. Is this understanding correct?**
 
-
+\[...\]
 
 ## Tham khảo thêm
 
