@@ -10,7 +10,7 @@ Cung cấp một thứ thay thế \(surrogate\) hoặc giữ chỗ \(placeholder
 
 ## Khái niệm
 
-Một proxy về cơ bản là một thứ thay thế cho một object mà bạn muốn/dự định làm việc. Khi một Client giao tiếp với một proxy, nó sẽ nghĩ rằng nó đang làm việc trực tiếp với object thực sự. Bạn sẽ phải chơi với  kiểu thiết kế này bởi vì việc xử lý một đối tượng gốc \(original object\) không phải lúc nào cũng có thể. Điều này là do nhiều yếu tố như vấn đề bảo mật chẳng hạn. Do vậy, trong mẫu này, bạn có thể muốn sử dụng một class mà có thể thực hiện như một interface đến một thứ gì khác.
+Một proxy về cơ bản là một thứ thay thế cho một object mà bạn muốn làm việc hoặc dự định làm việc. Khi một Client giao tiếp với một proxy, nó sẽ nghĩ rằng nó đang làm việc trực tiếp với object thực sự. Bạn sẽ phải chơi với  kiểu thiết kế này bởi vì việc xử lý một đối tượng gốc \(original object\) không phải lúc nào cũng có thể. Điều này là do nhiều yếu tố như vấn đề bảo mật chẳng hạn. Do vậy, trong mẫu này, bạn có thể muốn sử dụng một class mà có thể thực hiện như một interface đến một thứ gì khác.
 
 ## Ví dụ thực tế
 
@@ -18,11 +18,11 @@ Thời sinh viên mình rất hay cúp tiết, lúc điểm danh thầy gọi t�
 
 ## Ví dụ chuyên ngành
 
-An ATM implementation will hold proxy objects for bank information that exists on a remote server. In the real programming world, creating multiple instances of a complex object \(a heavy object\) is costly in general. So, whenever you can, you should create multiple proxy objects that can point to the original object. This mechanism can also help you to save the computer/system memory.
+Một máy ATM thường sẽ có các proxy object để lấy thông của ngân hàng \(nằm trên một remote server\). Trong thế giới lập trình, thực tế, chi phí cho việc tạo ra nhiều instance của một object phức tạp, cồng kềnh nói chung khá đắt đỏ. Do vậy, bất cứ khi nào có thể, bạn nên tạo nhiều proxy object trỏ về original object. Cơ chế này có thể giúp bạn tiết kiệm bộ nhớ của hệ thống
 
 ## Minh họa và giải thích
 
-In this program, you are calling the DoSomeWork\(\) method of the proxy object that, in turn, calls the DoSomeWork\(\) method of an object of ConcreteSubject. When customers see the output, they think they have invoked the method from their intended object directly.
+Trong chương trình này, bạn đang gọi phương thức _`DoSomeWork()`_ của proxy object, từ đây, proxy object sẽ gọi tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object. Khi người dùng nhìn thấy output, họ sẽ nghĩ rằng họ đang gọi trực tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object.
 
 ### Class Diagram
 
@@ -34,7 +34,7 @@ In this program, you are calling the DoSomeWork\(\) method of the proxy object t
 
 ### Solution Explorer View
 
-Hình 6-3 shows the high-level structure of the parts of the program. \(Note that you could separate the proxy class into a different file. But since the parts are small in this example, I have put everything in a single file.\)
+Hình 6-3 hiển thị high-level structure của các thành phần trong chương trình. \(Chú ý là bạn có thể tách proxy class ra một file riêng. Nhưng để cho gọn gọn dễ nhìn, tôi đã đặt mọi thứ vào một file duy nhất\)
 
 ![H&#xEC;nh 6-3. Solution Explorer View](../../.gitbook/assets/img-6-3.png)
 
