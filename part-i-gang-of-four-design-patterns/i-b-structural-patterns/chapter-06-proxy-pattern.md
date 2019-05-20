@@ -114,7 +114,29 @@ ConcreteSubject.DoSomeWork()
 
 
 
-**Bạn có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đâyt:**
+**Tôi có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đây, đúng không:**
+
+```csharp
+/// <summary>
+/// Proxy class
+/// </summary>
+public class Proxy : Subject
+{
+    Subject cs;
+
+    public Proxy()
+    {
+        //Instantiating inside the constructor
+        cs = new ConcreteSubject();
+    }
+    
+    public override void DoSomeWork()
+    {
+        Console.WriteLine("Proxy call happening now..");
+        cs.DoSomeWork();
+    }
+}
+```
 
 
 
