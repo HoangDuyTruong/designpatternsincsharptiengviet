@@ -34,7 +34,7 @@ Trong chương trình này, bạn đang gọi phương thức _`DoSomeWork()`_ c
 
 ### Solution Explorer View
 
-Hình 6-3 hiển thị high-level structure của các thành phần trong chương trình. \(Chú ý là bạn có thể tách proxy class ra một file riêng. Nhưng để cho gọn gọn dễ nhìn, tôi đã đặt mọi thứ vào một file duy nhất\)
+Hình 6-3 hiển thị high-level structure của các thành phần trong chương trình. \(Chú ý là bạn có thể tách proxy class ra một file riêng. Nhưng để cho gọn gàng dễ nhìn, tôi đã đặt mọi thứ vào một file duy nhất\)
 
 ![H&#xEC;nh 6-3. Solution Explorer View](../../.gitbook/assets/img-6-3.png)
 
@@ -110,11 +110,11 @@ ConcreteSubject.DoSomeWork()
 
 ## Hỏi Đáp
 
-**What are the different types of proxies?**
+**Có các loại proxy nào?**
 
 
 
-**You could create the ConcreteSubject instance in the proxy class constructor as shown here:**
+**Bạn có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đâyt:**
 
 
 
