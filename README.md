@@ -5,8 +5,10 @@ LƯU Ý
 TÀI LIỆU NÀY CHƯA HOÀN THÀNH, VẪN ĐANG DỊCH SẤP MẶT
 {% endhint %}
 
-**Github**: [https://github.com/minhhungit/designpatternsincsharptiengviet](https://github.com/minhhungit/designpatternsincsharptiengviet)  
-**Gitbook**: [https://minhhungit.gitbook.io/designpatternsincsharptiengviet](https://minhhungit.gitbook.io/designpatternsincsharptiengviet)
+_**Gitbook**_:       [https://minhhungit.gitbook.io/designpatternsincsharptiengviet](https://minhhungit.gitbook.io/designpatternsincsharptiengviet)  
+_**Repository**_:  [https://github.com/minhhungit/designpatternsincsharptiengviet](https://github.com/minhhungit/designpatternsincsharptiengviet)
+
+
 
 Project này là bản dịch các Design Patterns \(mẫu thiết kế\) dựa trên khung sườn của cuốn sách [**Design Patterns in C\#**](https://www.apress.com/gp/book/9781484236390) - tác giả **Vaskaran Sarcar**, với mong muốn giúp các bạn developer .NET Việt Nam \(hoặc thậm chí ngôn ngữ khác, nước khác ^^ \) tiếp cận dễ dàng hơn các mẫu thiết kế.
 
