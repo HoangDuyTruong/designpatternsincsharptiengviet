@@ -1,12 +1,8 @@
 # Chapter 6: Proxy Pattern
 
-{% hint style="warning" %}
-LƯU Ý: CHƯƠNG NÀY ĐANG ĐƯỢC DỊCH
-{% endhint %}
-
 ## GoF Definition
 
-Cung cấp một thứ thay thế \(surrogate\) hoặc giữ chỗ giùm \(placeholder\) cho một object khác để kiểm soát việc truy cập vào nó.
+Cung cấp một thứ thay thế \(surrogate\) hoặc giữ chỗ giùm \(placeholder\) cho một object khác để kiểm soát việc truy cập đến object đó.
 
 ## Khái niệm
 
@@ -18,11 +14,11 @@ Thời sinh viên mình rất hay cúp tiết, lúc điểm danh thầy gọi t�
 
 ## Ví dụ chuyên ngành
 
-Một máy ATM thường sẽ có các proxy object để lấy thông của ngân hàng \(nằm trên một remote server\). Trong thế giới lập trình, thực tế, chi phí cho việc tạo ra nhiều instance của một object phức tạp, cồng kềnh nói chung khá đắt đỏ. Do vậy, bất cứ khi nào có thể, bạn nên tạo nhiều proxy object trỏ về original object. Cơ chế này có thể giúp bạn tiết kiệm bộ nhớ của hệ thống
+Một máy ATM thường sẽ có các proxy object để lấy thông tin của ngân hàng \(nằm trên một remote server\). Trong thế giới lập trình, thực tế, chi phí cho việc tạo ra nhiều instance của một object phức tạp, cồng kềnh và nặng nề nói chung khá đắt đỏ. Do vậy, bất cứ khi nào có thể, bạn nên tạo nhiều proxy object trỏ về original object. Cơ chế này có thể giúp bạn tiết kiệm bộ nhớ của hệ thống.
 
 ## Minh họa và giải thích
 
-Trong chương trình này, bạn đang gọi phương thức _`DoSomeWork()`_ của proxy object, từ đây, proxy object sẽ gọi tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object. Khi người dùng nhìn thấy output, họ sẽ nghĩ rằng họ đang gọi trực tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object.
+Trong chương trình này, bạn đang gọi phương thức _`DoSomeWork()`_ của proxy object, từ đây, proxy object sẽ gọi tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object. Khi người dùng nhìn thấy output, họ sẽ nghĩ rằng họ đang gọi trực tiếp phương thức _`DoSomeWork()`_ của ConcreteSubject object - object thực sự.
 
 ### Class Diagram
 
@@ -121,6 +117,7 @@ Có một vài kiểu proxy phổ biến:
 
 > Còn rất nhiều kiểu proxy khác, như Monitor Proxy, Firewall Proxy, Cache Proxy, Synchronization Proxy, Copy-On-Write Proxy... mấy bác tự tìm hiểu thêm
 
+  
 **Tôi có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đây, đúng không:**
 
 ```csharp
@@ -145,27 +142,32 @@ public class Proxy : Subject
 }
 ```
 
-Uh, bạn có thể làm vậy. Nhưng nếu bạn làm theo thiết kế này, bất cứ khi nào bạn khởi tạo một proxy object, bạn cũng cần phải khởi tạo một đối tượng của lớp ConcreteSubject. Do đó, quá trình này có thể sẽ tạo ra các đối tượng không cần thiết.
+Uh, bạn có thể làm vậy. Nhưng nếu bạn làm theo thiết kế này, bất cứ khi nào bạn khởi tạo một proxy object, bạn cũng cần phải khởi tạo một đối tượng của lớp ConcreteSubject. Do đó, quá trình này có thể sẽ tạo ra các đối tượng không cần thiết.  
+
 
 **Nhưng với lazy instantiation, bạn có thể tạo ra các đối tượng không cần thiết trong ứng dụng đa luồng, đúng không?**
 
-Đúng là vậy, nhưng trong tài liệu này do cố tình chỉ đưa ra các mình họa đơn giản nên tôi đã bỏ qua phần đó. Trong phần thảo luận về mẫu Singleton trong Chương 1, chúng ta đã phân tích một số phương pháp để xử lý trong môi trường đa luồng, bạn luôn có thể tham khảo cho những trường hợp kiểu này. Ví dụ, trong trường hợp cụ thể này, bạn có thể sử dụng Smart Proxy để đảm bảo rằng một đối tượng cụ thể nào đó bị khóa \(lock\) trước khi bạn cấp quyền truy cập cho nó.
+Đúng là vậy, nhưng trong tài liệu này do cố tình chỉ đưa ra các mình họa đơn giản nên tôi đã bỏ qua phần đó. Trong phần thảo luận về mẫu Singleton trong [Chương 1](../i-a-creational-patterns/chapter-01-singleton-pattern.md), chúng ta đã phân tích một số phương pháp để xử lý trong môi trường đa luồng, bạn luôn có thể tham khảo cho những trường hợp kiểu này. Ví dụ, trong trường hợp cụ thể này, bạn có thể sử dụng Smart Proxy để đảm bảo rằng một object nào đó bị khóa \(lock\) khi bạn chưa cấp quyền truy cập vào nó.  
+
 
 **Bạn hãy cho một ví dụ về Remote Proxy?**
 
-Suppose you want to call a method of an object but the object is running in a different address space \(for example, in a different location or on a different computer\). How can you proceed? With the help of remote proxies, you can call the method on the proxy object, which in turn will forward the call to the actual object that is running on the remote machine. This type of need can be realized through different well-known mechanisms such as ASP. NET, CORBA, or Java’s RMI. In C\# applications, you can exercise a similar mechanism with WCF \(.NET Framework version 3.0 onward\) or .NET web services/remoting \(mainly used in earlier versions\).
+Giả sử rằng bạn muốn gọi tới môt method của một object nhưng object đó đang chạy ở một không gian địa chỉ khác nhau \(different address space\), ví dụ một nơi khác hoặc trên một máy tính khác. Làm sao xử lý đây? Với sự trợ giúp của remote proxy, bạn có thể gọi method đó trên proxy object, rồi proxy object sẽ chuyển lời gọi đến object thực sự đang chạy trên remote machine. Những bài toán kiểu này có thể được nhận ra thông qua các cơ chế quen thuộc phổ biến như ASP. NET, CORBA, hay Java’s RMI. Trong các ứng dụng C\#, bạn có thể thực hiện một cơ chế tương tự với WCF \(.NET Framework phiên bản 3.0 trở đi\) hoặc .NET web services/remoting \(chủ yếu được sử dụng trong các phiên cũ\).
 
 ![H&#xEC;nh 6-4: Diagram c&#x1EE7;a m&#x1ED9;t Remote Proxy &#x111;&#x1A1;n gi&#x1EA3;n](../../.gitbook/assets/img-6-4.png)
 
 **Khi nào thì sử dụng Virtual Proxy?**
 
-Sử dụng Virtual Proxy để tránh việc load một tấm ảnh cưc lớn nhiều lần.
+Sử dụng Virtual Proxy để tránh việc load một tấm ảnh cưc lớn nhiều lần.  
+
 
 **Khi nào thì sử dụng Protection Proxy?**
 
-In an organization, the security team can implement a protection proxy to block Internet access to specific web sites. Consider the following example, which is basically a modified version of the Proxy pattern implementation described earlier. For simplicity, let’s assume you have only three registered users who can exercise the proxy method DoSomeWork\(\). If any other user \(say Robin\) tries to invoke the method, the system will reject those attempts. When the system rejects this kind of unwanted access, there is no point in making a proxy object. So, if you avoid instantiating an object of ConcreteSubject in the proxy class constructor, you can easily avoid creating objects unnecessarily. Now let’s go through the modified implementation
+Một vài công ty, họ có thể sử dụng một Protection Proxy để chặn truy cập internet tới một website, ứng dụng cụ thể \(ví dụ chặn skype, liên xô chống mỹ...\).   
+  
+Hãy xem xét ví dụ sau, cơ bản là sửa đổi một chút cách triển khai mẫu Proxy đã được mô tả trước đó. Để đơn giản hóa, hãy giả sử là bạn chỉ có 3 user có thể xài được proxy method DoSomeWork\(\). Nếu có bất kỳ ông nào khác \(ví dụ Jin\) cố gắng gọi method đó, hệ thống sẽ từ chối truy cập. Khi hệ thống từ chối các truy cập không mong muốn này, thì mình đâu cần phải tao ra các ConcreteSubject object nữa, do đó tránh được việc tạo ra những object không cần thiết.
 
-Dưới đây là code đã chỉnh sửa:
+Giờ hãy xem code đã chỉnh sửa:
 
 ```csharp
 using System;
@@ -267,9 +269,10 @@ Robin wants to invoke a proxy method.
 Sorry Robin, you do not have access.
 ```
 
+  
 **Có vẻ như Proxy hoạt động giống Decorator, phải hem?**
 
-A protection proxy might be implemented like a decorator, but you should not forget the intent of a proxy. Decorators focus on adding responsibilities, but proxies focus on controlling the access to an object. Proxies differ from each other through their types and implementations. So, if you can remember their purposes, in most cases you will be able to clearly distinguish proxies from decorators.
+Một Protection Proxy có lẽ được implement như một decorator, nhưng mà ban không nên quên mục đích của một proxy. Decorator tập trung vào việc add thêm tính năng, còn proxy thì tập trung vào việc kiểm soát việc truy cập đến object. Các proxy khác nhau dựa vào mục đích sử dụng và các cách thực hiện, do vậy, nếu bạn có thể nhớ mục đích của chúng, bạn có thể phân biệt được rõ ràng proxy và decorator trong hầu hết mọi trường hợp.
 
 ## Tham khảo thêm
 
