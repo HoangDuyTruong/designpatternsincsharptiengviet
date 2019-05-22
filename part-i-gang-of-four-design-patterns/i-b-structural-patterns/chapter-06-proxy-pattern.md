@@ -6,11 +6,11 @@ LƯU Ý: CHƯƠNG NÀY ĐANG ĐƯỢC DỊCH
 
 ## GoF Definition
 
-Cung cấp một thứ thay thế \(surrogate\) hoặc giữ chỗ \(placeholder\) cho một object khác để kiểm soát việc truy cập vào nó.
+Cung cấp một thứ thay thế \(surrogate\) hoặc giữ chỗ giùm \(placeholder\) cho một object khác để kiểm soát việc truy cập vào nó.
 
 ## Khái niệm
 
-Một proxy về cơ bản là một thứ thay thế cho một object mà bạn muốn làm việc hoặc dự định làm việc. Khi một Client giao tiếp với một proxy, nó sẽ nghĩ rằng nó đang làm việc trực tiếp với object thực sự. Bạn sẽ phải chơi với  kiểu thiết kế này bởi vì việc xử lý một đối tượng gốc \(original object\) không phải lúc nào cũng có thể. Điều này là do nhiều yếu tố như vấn đề bảo mật chẳng hạn. Do vậy, trong mẫu này, bạn có thể muốn sử dụng một class mà có thể thực hiện như một interface đến một thứ gì khác.
+Một proxy về cơ bản là một thứ thay thế cho một object mà bạn muốn làm việc hoặc dự định làm việc. Khi một Client giao tiếp với một proxy, nó sẽ nghĩ rằng nó đang làm việc trực tiếp với object thực sự. Bạn sẽ phải chơi với  kiểu thiết kế này bởi vì việc xử lý một đối tượng gốc \(original object\) không phải lúc nào cũng có thể. Điều này là do nhiều yếu tố như vấn đề bảo mật chẳng hạn.
 
 ## Ví dụ thực tế
 
@@ -112,7 +112,14 @@ ConcreteSubject.DoSomeWork()
 
 **Có các loại proxy nào?**
 
-\[...\]
+Có một vài kiểu proxy phổ biến:
+
+* Remote proxy: Kiểu proxy này có thể trỏ tới một đối tượng nằm ở một nơi khác.
+* Virtual proxy: Kiểu proxy này thường được sử dụng để thực hiện tối ưu hóa, khi có nhiều lượt truy xuất vào một đối tượng cấu trúc phức tạp, cồng kềnh, chứa dữ liệu lớn \(hình ảnh, video,..\) trường hợp này chúng ta sẽ tạo ra một _`proxy`_ để đại diện cho đối tượng đó. Đối tượng chỉ được tạo ở lần truy xuất đầu tiên sau đó những lần truy xuất tiếp theo chỉ cần tái sử dụng lại mà không cần khởi tạo để tránh trường hợp sao chép ra nhiều đối tượng, vì vậy sẽ tiếp kiệm được nhiều tài nguyên.
+* Protection proxy: Proxy dạng này sẽ xử lý những các quyền truy cập khác nhau.
+* Smart reference proxy: Thực hiện các kiểm soát các hoạt động bổ sung khi đối tượng được truy cập bởi Client. Một ví dụ là thường proxy sẽ đếm số lượt tham chiếu đến object ở một thời điểm cụ thể.
+
+> Còn rất nhiều kiểu proxy khác, như Monitor Proxy, Firewall Proxy, Cache Proxy, Synchronization Proxy, Copy-On-Write Proxy... mấy bác tự tìm hiểu thêm
 
 **Tôi có thể create một instance của ConcreteSubject trong constructor của proxy class như dưới đây, đúng không:**
 
@@ -138,23 +145,25 @@ public class Proxy : Subject
 }
 ```
 
+Uh, bạn có thể làm vậy. Nhưng nếu bạn làm theo thiết kế này, bất cứ khi nào bạn khởi tạo một proxy object, bạn cũng cần phải khởi tạo một đối tượng của lớp ConcreteSubject. Do đó, quá trình này có thể sẽ tạo ra các đối tượng không cần thiết.
 
+**Nhưng với lazy instantiation, bạn có thể tạo ra các đối tượng không cần thiết trong ứng dụng đa luồng, đúng không?**
 
-**But with this lazy instantiation process, you may create unnecessary objects in a multithreaded application. Is this understanding correct?**
+Đúng là vậy, nhưng trong tài liệu này do cố tình chỉ đưa ra các mình họa đơn giản nên tôi đã bỏ qua phần đó. Trong phần thảo luận về mẫu Singleton trong Chương 1, chúng ta đã phân tích một số phương pháp để xử lý trong môi trường đa luồng, bạn luôn có thể tham khảo cho những trường hợp kiểu này. Ví dụ, trong trường hợp cụ thể này, bạn có thể sử dụng Smart Proxy để đảm bảo rằng một đối tượng cụ thể nào đó bị khóa \(lock\) trước khi bạn cấp quyền truy cập cho nó.
 
-\[...\]
+**Bạn hãy cho một ví dụ về Remote Proxy?**
 
-**Can you give an example of a remote proxy?**
+Suppose you want to call a method of an object but the object is running in a different address space \(for example, in a different location or on a different computer\). How can you proceed? With the help of remote proxies, you can call the method on the proxy object, which in turn will forward the call to the actual object that is running on the remote machine. This type of need can be realized through different well-known mechanisms such as ASP. NET, CORBA, or Java’s RMI. In C\# applications, you can exercise a similar mechanism with WCF \(.NET Framework version 3.0 onward\) or .NET web services/remoting \(mainly used in earlier versions\).
 
-\[...\]
+![H&#xEC;nh 6-4: Diagram c&#x1EE7;a m&#x1ED9;t Remote Proxy &#x111;&#x1A1;n gi&#x1EA3;n](../../.gitbook/assets/img-6-4.png)
 
-**When can you use a virtual proxy?**
+**Khi nào thì sử dụng Virtual Proxy?**
 
-\[...\]
+Sử dụng Virtual Proxy để tránh việc load một tấm ảnh cưc lớn nhiều lần.
 
-**When can you use a protection proxy?**
+**Khi nào thì sử dụng Protection Proxy?**
 
-\[...\]
+In an organization, the security team can implement a protection proxy to block Internet access to specific web sites. Consider the following example, which is basically a modified version of the Proxy pattern implementation described earlier. For simplicity, let’s assume you have only three registered users who can exercise the proxy method DoSomeWork\(\). If any other user \(say Robin\) tries to invoke the method, the system will reject those attempts. When the system rejects this kind of unwanted access, there is no point in making a proxy object. So, if you avoid instantiating an object of ConcreteSubject in the proxy class constructor, you can easily avoid creating objects unnecessarily. Now let’s go through the modified implementation
 
 Dưới đây là code đã chỉnh sửa:
 
@@ -258,9 +267,9 @@ Robin wants to invoke a proxy method.
 Sorry Robin, you do not have access.
 ```
 
-**It looks like proxies act like decorators. Is this understanding correct?**
+**Có vẻ như Proxy hoạt động giống Decorator, phải hem?**
 
-\[...\]
+A protection proxy might be implemented like a decorator, but you should not forget the intent of a proxy. Decorators focus on adding responsibilities, but proxies focus on controlling the access to an object. Proxies differ from each other through their types and implementations. So, if you can remember their purposes, in most cases you will be able to clearly distinguish proxies from decorators.
 
 ## Tham khảo thêm
 
