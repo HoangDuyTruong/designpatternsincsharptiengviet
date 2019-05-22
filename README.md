@@ -57,6 +57,10 @@ Các chương đã dịch xong
 
 Chi tiết hơn các bác có thể check [tại đây](https://github.com/minhhungit/designpatternsincsharptiengviet/issues/1#issue-442682612)
 
+## Lưu ý trước khi đọc
+
+Nhớ là tài liệu này chỉ cố gắng mô tả các design pattern ở mức độ nhập môn, sơ khai và cơ bản nhất. Việc đi từ đơn giản đến phức tạp sẽ có nhiều lợi ích và phù hợp cho những bạn mới, còn đối với những bạn đã có ít nhiều hiểu biết về design patterns, tài liệu này có thể sẽ quá đơn giản, hoặc thậm chí theo bạn là thiếu sót, do vậy, trường hợp này bạn sẽ cần phải tự nghiên cứu, tìm hiểu thêm từ các nguồn khác. Thêm nữa, vì là bản dịch nên sẽ có một số khác biệt về ngôn ngữ, nên tài liệu này cũng cố gắng đưa vào một số đường link để bạn tìm hiểu thêm cũng như đối chiếu với các bản dịch khác, từ đó giúp bạn hiểu rõ hơn, bạn sẽ định hình được, đi đúng hướng và ... lương cao hơn 😘 
+
 ## Thành viên
 
 > Đang cập nhật...
