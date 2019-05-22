@@ -52,6 +52,7 @@ Các chương đã dịch xong
 * [Chapter 2: Prototype Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-02-prototype-pattern)
 * [Chapter 4: Factory Method Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-04-factory-method-pattern)
 * [Chapter 5: Abstract Factory Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-a-creational-patterns/chapter-05-abstract-factory-pattern)
+* [Chapter 6: Proxy Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-i-gang-of-four-design-patterns/i-b-structural-patterns/chapter-06-proxy-pattern)
 * [Chapter 24: Simple Factory Pattern](https://minhhungit.gitbook.io/designpatternsincsharptiengviet/part-ii-additional-design-patterns/chapter-24-simple-factory-pattern)
 
 Chi tiết hơn các bác có thể check [tại đây](https://github.com/minhhungit/designpatternsincsharptiengviet/issues/1#issue-442682612)
