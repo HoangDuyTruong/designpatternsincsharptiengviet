@@ -26,7 +26,7 @@ Bạn có một chương trình, ví dụ notepad, bạn muốn người dùng c
 
 ## Minh họa và Giải nghĩa
 
-Có một số đặc điểm chính khi triển khai code dưới đây:
+Dưới đây là một số điểm chính khi mẫu này:
 
 * Constructor là `private` trong ví dụ này, do đó bạn sẽ không thể khởi tạo instance  như cách thông thường \(bằng từ khóa`new`\)
 * Trước khi bạn thử tạo một instance của class, bạn sẽ kiểm tra xem liệu đã có sẵn instance nào chưa. Nếu bạn chưa có instance nào, bạn sẽ tạo mới một instance, còn không thì sử dụng cái đã có sẵn.
